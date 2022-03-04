@@ -1,0 +1,2 @@
+class MusclePost < ApplicationRecord
+end

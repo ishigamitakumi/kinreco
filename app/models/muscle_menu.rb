@@ -1,0 +1,2 @@
+class MuscleMenu < ApplicationRecord
+end
