@@ -16,7 +16,7 @@ root :to => 'homes#top'
 get "homes/about" => "homes#about"
 
 scope module: :public do
-
+resources :customers, only: [:show,:index, :edit, :update]
 end
 
 namespace :admin do
