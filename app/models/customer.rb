@@ -12,7 +12,7 @@ class Customer < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :follower
   has_one_attached :profile_image
 
-  validates :name, length: { minimum: 2, maximum: 20 }
+  validates :name, presence: true
   validates :introduction_text,length: {maximum: 50}
 
 end
