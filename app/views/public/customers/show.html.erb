@@ -1,3 +1,40 @@
 <h1>show</h1>
-<%= @customer.name %>
-<%= @customer.introduction_text %>
+
+<table>
+    <tr>
+      <td >氏名</td>
+      <td><%= @customer.name %></td>
+    </tr>
+    <tr>
+      <td>年齢</td>
+      <td><%= @customer.age %></td>
+    </tr>
+    <tr>
+      <td>性別</td>
+      <td><%= @customer.sex %></td>
+    </tr>
+    <tr>
+      <td>筋トレ歴</td>
+      <td><%= @customer.experience_years%></td>
+    </tr>
+    <tr>
+      <td>ひとこと紹介文</td>
+      <td><%= @customer.introduction_text %></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th>ユーザー編集</th>
+      <td><%= link_to '編集する',edit_customer_path %></td>
+    </tr>
+    
+     <tr>
+      <th>筋トレ投稿</th>
+      <td><%= link_to '一覧を見る'%></td>
+    </tr>
+    <tr>
+      <th>いいねした投稿</th>
+      <td><%= link_to '一覧を見る' %></td>
+    </tr>
+  </table>
