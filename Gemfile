@@ -59,3 +59,4 @@ gem 'kaminari'
 gem 'activestorage-validator'
 gem 'simple_calendar', '~> 2.0'
 gem 'dotenv-rails'
+

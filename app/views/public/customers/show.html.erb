@@ -1,0 +1,50 @@
+<h1>customer/show</h1>
+
+<table>
+    <tr>
+      <td>
+      <%= image_tag @customer.get_profile_image, size: '80x80' %>
+      </td>
+    </tr>
+    <tr>
+      <td >氏名</td>
+      <td><%= @customer.name %></td>
+    </tr>
+    <tr>
+      <td>年齢</td>
+      <td><%= @customer.age %></td>
+    </tr>
+    <tr>
+      <td>性別</td>
+      <td><%= @customer.sex %></td>
+    </tr>
+    <tr>
+      <td>筋トレ歴</td>
+      <td><%= @customer.experience_years %>年</td>
+    </tr>
+    <tr>
+      <td>ひとこと紹介文</td>
+      <td><%= @customer.introduction_text %></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th>ユーザー編集</th>
+      <td><%= link_to '編集する',edit_customer_path %></td>
+    </tr>
+
+    <tr>
+      <th>他のユーザー</th>
+      <td><%= link_to '一覧を見る',customers_path %></td>
+    </tr>
+
+     <tr>
+      <th>筋トレ投稿</th>
+      <td><%= link_to '一覧を見る'%></td>
+    </tr>
+    <tr>
+      <th>いいねした投稿</th>
+      <td><%= link_to '一覧を見る' %></td>
+    </tr>
+  </table>
