@@ -18,4 +18,8 @@ class Customer < ApplicationRecord
   enum sex: { "非公開": 0, "男性": 1, "女性": 2}
   enum age: { "未設定": 0, "10代": 1, "20代": 2, "30代": 3, "40代": 4, "50代": 5, "60代以降": 6 }
 
+  def get_profile_image
+    profile_image.attached? ? profile_image : 'no_image.jpg'
+  end
+
 end

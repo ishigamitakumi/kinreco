@@ -1,1 +1,31 @@
-<h1>index</h1>
+<h1>customer/index</h1>
+<table>
+  <thead>
+    <tr>
+      <th>イメージ</th>
+      <th>氏名</th>
+      <th>年齢</th>
+      <th>性別</th>
+      <th>筋トレ歴</th>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td>
+          <%= image_tag customer.get_profile_image, size: '80x80' %>
+        </td>
+        <td>
+          <%= link_to customer_path(customer.id) do %>
+          <%= customer.name %>
+          <% end %>
+        </td>
+        <td><%= customer.age %></td>
+        <td><%= customer.sex %></td>
+        <td><%= customer.experience_years %>年</td>
+        <td><%= customer.introduction_text %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
