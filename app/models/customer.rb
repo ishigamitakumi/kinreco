@@ -13,6 +13,9 @@ class Customer < ApplicationRecord
   has_one_attached :profile_image
 
   validates :name, presence: true
-  validates :introduction_text,length: {maximum: 50}
-  
+  validates :introduction_text,length: {maximum: 20}
+
+  enum sex: { "非公開": 0, "男性": 1, "女性": 2}
+  enum age: { "未設定": 0, "10代": 1, "20代": 2, "30代": 3, "40代": 4, "50代": 5, "60代以降": 6 }
+
 end

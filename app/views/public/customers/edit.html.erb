@@ -9,21 +9,19 @@
       <%= f.label :email, 'メールアドレス'%>
       <%= f.text_field :email, class: "form-control col-md-3" %>
     </div>
-    <div>
-      <%= f.label :age, '年齢' %>
-      <%= f.text_field :age %>
-    </div>
+      <%= f.label :age, '年齢'%>
+      <%= f.select :age, Customer.ages.keys %>
     <div>
       <%= f.label :sex, '性別'%>
-      <%= f.text_field :sex %>
+      <%= f.select :sex, Customer.sexes.keys %>
     </div>
     <div>
       <%= f.label :experience_years, '筋トレ歴'%>
-      <%= f.text_field :experience_years %>
+      <%= f.text_field :experience_years %>年
     </div>
     <div>
-      <%= f.label :introduction_text, 'ひとこと紹介文'%>
-      <%= f.text_field :introduction_text %>
+      <%= f.label :introduction_text, 'ひとこと紹介文(20文字以内)'%></br>
+      <%= f.text_area :introduction_text,maxlength: "20" %>
     </div>
     <div>
       <%= f.submit '編集内容を保存する'  %>
