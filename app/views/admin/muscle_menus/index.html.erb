@@ -1,11 +1,9 @@
 <h1>admin/muscle_menus/index</h1>
-<table>
   <%= form_with model: @muscle_menu,url: admin_muscle_menus_path, method: :post do |f| %>
   <%= f.label :メニュー追加 %>
   <%= f.text_field :name%>
   <%= f.submit "新規登録"%>
   <% end %>
-</table>
 
 
 <table>
