@@ -1,9 +1,20 @@
 <h1>muscle_post/show</h1>
-
+<%= @muscle_post.customer.name %>さんの投稿
 <table>
   <tr>
-    <td><%= @muscle_post.sentence%></td>
-    <td></td>
+    <td><%= @muscle_post.muscle_menu.name %></td>
+    <td><%= @muscle_post.weight %>kgを<%= @muscle_post.times%>回</td>
   </tr>
-  
+  <tr>
+    <td><%= @muscle_post.sentence%></td>
+    <td><%= image_tag @muscle_post.get_post_image,size: "80x80" %></td>
+  </tr>
 </table>
+<% if @muscle_post.customer == current_customer %>
+ <table>
+    <tr>
+      <td><%= link_to "編集する",edit_muscle_post_path %></td>
+      <td><%= link_to "削除する",muscle_post_path, method: :delete %></td>
+    </tr>
+  </table>
+<% end %>

@@ -1,5 +1,6 @@
 class Public::MusclePostsController < ApplicationController
   before_action :authenticate_customer!
+  before_action :correct_user, only: [:edit, :update]
 
   def create
     @muscle_post = MusclePost.new(muscle_post_params)
@@ -10,13 +11,38 @@ class Public::MusclePostsController < ApplicationController
      redirect_back(fallback_location: root_path)
     end
   end
+
   def show
     @muscle_post = MusclePost.find(params[:id])
   end
 
+  def index
+    @muscle_posts = MusclePost.all
+  end
+
+  def edit
+    @muscle_post = MusclePost.find(params[:id])
+  end
+
+  def update
+  end
+
+  def destroy
+    @muscle_post = MusclePost.find(params[:id])
+    @muscle_post.destroy
+    redirect_to muscle_posts_path
+  end
+
    private
+
     def muscle_post_params
       params.permit(:muscle_menu_id,:post_image,:sentence,:weight,:times,:body_weight)
+    end
+
+    def correct_user
+    @muscle_post = MusclePost.find(params[:id])
+    @customer = @muscle_post.customer
+    redirect_to(muscle_posts_path) unless @customer == current_customer
     end
 
 end
