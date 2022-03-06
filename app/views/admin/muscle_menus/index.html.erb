@@ -1,0 +1,27 @@
+<h1>admin/muscle_menus/index</h1>
+<table>
+  <%= form_with model: @muscle_menu,url: admin_muscle_menus_path, method: :post do |f| %>
+  <%= f.label :メニュー追加 %>
+  <%= f.text_field :name%>
+  <%= f.submit "新規登録"%>
+  <% end %>
+</table>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>メニュー</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @muscle_menus.each do |muscle_menu|%>
+    <tr>
+      <td><%= muscle_menu.name%></td>
+      <td><%= link_to "編集する", edit_admin_muscle_menu_path(muscle_menu) %></td>
+      <td><%= link_to "削除する", admin_muscle_menu_path(muscle_menu), method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

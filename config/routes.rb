@@ -16,10 +16,12 @@ root :to => 'homes#top'
 get "homes/about" => "homes#about"
 
 scope module: :public do
+get "customers/calendar" => "customers#calendar"
 resources :customers, only: [:show,:index, :edit, :update]
 end
 
 namespace :admin do
-
+resources :customers, only: [:show,:index]
+resources :muscle_menus, only: [:index,:create,:edit,:update,:destroy]
 end
 end

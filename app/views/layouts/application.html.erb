@@ -11,6 +11,55 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav>
+        <div>
+          <ul>
+            <% if admin_signed_in? %>
+              <li>
+                <%= link_to "筋トレメニュ一覧", admin_muscle_menus_path %>
+              </li>
+              <li>
+                <%= link_to "会員一覧", admin_customers_path %>
+              </li>
+              <li>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+              </li>
+              <% else %>
+            <ul>
+              <% if customer_signed_in? %>
+              <li>
+                <%= link_to "マイページ", customer_path(current_customer) %>
+              </li>
+              <li>
+                <%= link_to "カレンダー", customers_calendar_path %>
+              </li>
+              <li>
+                <%= link_to "投稿" %>
+              </li>
+              <li>
+                <%= link_to "他の人の投稿を見る" %>
+              </li>
+              <li>
+                <%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %>
+              </li>
+              <% else %>
+              <li>
+                <%= link_to "about",homes_about_path %>
+              </li>
+              <li>
+                <%= link_to "新規登録",new_customer_registration_path %>
+              </li>
+              <li>
+                <%= link_to "ログイン",new_customer_session_path %>
+              </li>
+              <% end %>
+            </ul>
+            <% end %>
+            </ul>
+        </div>
+      </nav>
+    </header>
+      <%= yield %>
   </body>
 </html>
