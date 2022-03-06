@@ -27,24 +27,25 @@
       <td><%= @customer.introduction_text %></td>
     </tr>
   </table>
-
+  <% if @customer == current_customer %>
   <table>
     <tr>
       <th>ユーザー編集</th>
-      <td><%= link_to '編集する',edit_customer_path %></td>
+      <td><%= link_to "編集する",edit_customer_path %></td>
     </tr>
 
     <tr>
       <th>他のユーザー</th>
-      <td><%= link_to '一覧を見る',customers_path %></td>
-      <td><%= link_to 'フォロー',customers_path %></td>
-      <td><%= link_to 'フォロワー',customers_path %></td>
+      <td><%= link_to "一覧を見る",customers_path %></td>
+      <td><%= link_to "フォロー",customers_path %></td>
+      <td><%= link_to "フォロワー",customers_path %></td>
     </tr>
 
      <tr>
       <th>筋トレ投稿</th>
-      <td><%= link_to '新規投稿',new_muscle_post_path %></td>
-      <td><%= link_to '他の投稿を見る'%></td>
-      <td><%= link_to 'いいね一覧を見る'%></td>
+      <td><%= link_to "新規投稿",new_muscle_post_path %></td>
+      <td><%= link_to "他の投稿を見る"%></td>
+      <td><%= link_to "いいね一覧を見る" %></td>
     </tr>
   </table>
+  <% end %>

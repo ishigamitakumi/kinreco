@@ -1,5 +1,6 @@
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
+  before_action :correct_user, only: [:edit, :update]
   def index
     @customers = Customer.all
   end
@@ -19,9 +20,16 @@ class Public::CustomersController < ApplicationController
   end
   def  calendar
   end
-  
-  def customer_params
-    params.require(:customer).permit(:name,:email,:age,:sex,:experience_years,:introduction_text,:profile_image)
-  end
 
+  private
+
+    def customer_params
+      params.require(:customer).permit(:name,:email,:age,:sex,:experience_years,:introduction_text,:profile_image)
+    end
+    def correct_user
+      @customer = Customer.find(params[:id])
+      unless @customer == current_customer
+        redirect_to customer_path(current_customer)
+      end
+    end
 end

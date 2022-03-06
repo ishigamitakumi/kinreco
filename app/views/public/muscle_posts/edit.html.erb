@@ -1,0 +1,29 @@
+<h1>muscle_post/edit</h1>
+
+<%= form_with model: @muscle_post,url: muscle_post_path, method: :patch do |f| %>
+<div>
+  <%= f.label :sentence, "文章(100文字以内)" %></br>
+  <%= f.text_area :sentence,size: "20x5",maxlength: "100" %>
+</div>
+<div>
+  <%= f.label :post_image,"画像"%>
+  <%= f.file_field :post_image, accept: "image/*" %>
+</div>
+<div>
+  <%= f.label :body_weight,"体重" %>
+  <%= f.text_field :body_weight,placeholder: "半角数字",size: "4×2" %>kg
+</div>
+<div>
+  <%= f.label "トレーニングメニュー" %>
+  <%= f.collection_select :muscle_menu_id, MuscleMenu.all, :id, :name, :include_blank => "--選択してください--" %>
+</div>
+<div>
+  <%= f.text_field :weight,placeholder: "半角数字",size: "4×2" %>kg
+  を
+  <%= f.text_field :times,placeholder: "半角数字",size: "4×2" %>回
+</div>
+<div>
+  <%= f.submit "変更を保存する" %>
+</div>
+
+<% end %>
