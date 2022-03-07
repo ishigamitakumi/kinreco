@@ -1,5 +1,3 @@
-<h1>customer/show</h1>
-
 <table>
     <tr>
       <td>
@@ -37,15 +35,34 @@
     <tr>
       <th>他のユーザー</th>
       <td><%= link_to "一覧を見る",customers_path %></td>
-      <td><%= link_to "フォロー",customers_path %></td>
-      <td><%= link_to "フォロワー",customers_path %></td>
+      <td><%= link_to "フォロー" %></td>
+      <td><%= link_to "フォロワー" %></td>
     </tr>
 
      <tr>
       <th>筋トレ投稿</th>
       <td><%= link_to "新規投稿",new_muscle_post_path %></td>
-      <td><%= link_to "他の投稿を見る"%></td>
+      <td><%= link_to "他の投稿を見る",muscle_posts_path %></td>
       <td><%= link_to "いいね一覧を見る" %></td>
     </tr>
   </table>
   <% end %>
+  
+  
+<h1>過去の投稿</h1>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+    <% @muscle_posts.each do |muscle_post| %>
+    <tr>
+      <td><%= muscle_post.muscle_menu.name %></td>
+      <td><%= muscle_post.weight %>kgを<%= muscle_post.times%>回</td>
+      <td><%= link_to "詳細を見に行く",muscle_post_path(muscle_post.id) %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>

@@ -2,10 +2,11 @@ class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
   before_action :correct_user, only: [:edit, :update]
   def index
-    @customers = Customer.all
+    @customers = Customer.where.not(id: current_customer.id) #他のユーザーだけを取得する
   end
   def show
     @customer = Customer.find(params[:id])
+    @muscle_posts = @customer.muscle_posts
   end
   def edit
     @customer = Customer.find(params[:id])

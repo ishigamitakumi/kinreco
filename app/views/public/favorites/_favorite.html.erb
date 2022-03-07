@@ -1,0 +1,10 @@
+<% if muscle_post.favorited_by?(current_customer) %>
+  <%= link_to muscle_post_favorites_path(muscle_post), method: :delete do %>
+  ♥<%= muscle_post.favorites.count %>
+  <% end %>
+  
+<% else %>
+  <%= link_to muscle_post_favorites_path(muscle_post), method: :post do %>
+  ♡<%= muscle_post.favorites.count %>
+  <% end %>
+<% end %>

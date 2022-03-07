@@ -1,5 +1,7 @@
-<h1>muscle_post/show</h1>
-<%= @muscle_post.customer.name %>さんの投稿
+<%= link_to customer_path(@muscle_post.customer.id) do %>
+<%= @muscle_post.customer.name %>
+<% end %>
+さんの投稿
 <table>
   <tr>
     <td><%= @muscle_post.muscle_menu.name %></td>
@@ -13,8 +15,12 @@
 <% if @muscle_post.customer == current_customer %>
  <table>
     <tr>
+      <td><%= @muscle_post.body_weight%>kg</td>
+    </tr>
       <td><%= link_to "編集する",edit_muscle_post_path %></td>
       <td><%= link_to "削除する",muscle_post_path, method: :delete %></td>
     </tr>
   </table>
+<% else %>
+<%= render "public/favorites/favorite", muscle_post: @muscle_post %>
 <% end %>
