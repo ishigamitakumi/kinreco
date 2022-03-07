@@ -6,6 +6,7 @@ class Public::CustomersController < ApplicationController
   end
   def show
     @customer = Customer.find(params[:id])
+    @muscle_posts = @customer.muscle_posts
   end
   def edit
     @customer = Customer.find(params[:id])
