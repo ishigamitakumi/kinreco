@@ -18,7 +18,9 @@ get "homes/about" => "homes#about"
 scope module: :public do
 get "customers/calendar" => "customers#calendar"
 resources :customers, only: [:show,:index, :edit, :update]
-resources :muscle_posts, only: [:new,:create,:index,:show, :edit, :update,:destroy]
+resources :muscle_posts, only: [:new,:create,:index,:show, :edit, :update,:destroy] do
+  resource :favorites, only: [:create,:destroy]
+  end
 end
 
 namespace :admin do
