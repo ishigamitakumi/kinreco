@@ -17,7 +17,7 @@ class Public::MusclePostsController < ApplicationController
   end
 
   def index
-    @muscle_posts = MusclePost.all
+    @muscle_posts = MusclePost.where.not(id: current_customer.muscle_posts.ids) #他のユーザーの投稿だけを取得する
   end
 
   def edit
