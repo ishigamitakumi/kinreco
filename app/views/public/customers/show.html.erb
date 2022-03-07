@@ -46,16 +46,16 @@
       <td><%= link_to "いいね一覧を見る" %></td>
     </tr>
   </table>
+  <% else %>
+    <% if current_customer.following?(@customer) %>
+      <%= link_to "フォロー外す", customer_relationships_path(@customer.id), method: :delete %>
+    <% else %>
+      <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :post %>
+    <% end %>
   <% end %>
-  
   
 <h1>過去の投稿</h1>
   <table>
-    <thead>
-      <tr>
-        <td></td>
-      </tr>
-    </thead>
     <tbody>
     <% @muscle_posts.each do |muscle_post| %>
     <tr>
