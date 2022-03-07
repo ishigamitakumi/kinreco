@@ -1,67 +1,66 @@
-<table>
-    <tr>
-      <td>
+<table cellspacing="15">
+  <tr>
+    <td>
       <%= image_tag @customer.get_profile_image, size: '80x80' %>
-      </td>
-    </tr>
-    <tr>
-      <td >氏名</td>
-      <td><%= @customer.name %></td>
-    </tr>
-    <tr>
-      <td>年齢</td>
-      <td><%= @customer.age %></td>
-    </tr>
-    <tr>
-      <td>性別</td>
-      <td><%= @customer.sex %></td>
-    </tr>
-    <tr>
-      <td>筋トレ歴</td>
-      <td><%= @customer.experience_years %>年</td>
-    </tr>
-    <tr>
-      <td>ひとこと紹介文</td>
-      <td><%= @customer.introduction_text %></td>
-    </tr>
+    </td>
+  </tr>
+  <tr>
+    <td>氏名</td>
+    <td><%= @customer.name %></td>
+  </tr>
+  <tr>
+    <td>年齢</td>
+    <td><%= @customer.age %></td>
+  </tr>
+  <tr>
+    <td>性別</td>
+    <td><%= @customer.sex %></td>
+  </tr>
+  <tr>
+    <td>筋トレ歴</td>
+    <td><%= @customer.experience_years %>年</td>
+  </tr>
+  <tr>
+    <td>ひとこと紹介文　　</td>
+    <td><%= @customer.introduction_text %></td>
+  </tr>
+  <tr>
+    <td>フォロー</td>
+    <td><%= link_to "#{@customer.followings.count} ",customer_followings_path(@customer.id)  %></td>
+  </tr>
+  <tr>
+    <td>フォロワー</td>
+    <td><%= link_to "#{@customer.followers.count} ", customer_followers_path(@customer.id)  %></td>
+  </tr>
   </table>
   <% if @customer == current_customer %>
-  <table>
+  <table cellspacing="15">
     <tr>
-      <th>ユーザー編集</th>
       <td><%= link_to "編集する",edit_customer_path %></td>
+      <td><%= link_to "他のユーザーを見る",customers_path %></td>
     </tr>
-
-    <tr>
-      <th>他のユーザー</th>
-      <td><%= link_to "一覧を見る",customers_path %></td>
-      <td><%= link_to "フォロー" %></td>
-      <td><%= link_to "フォロワー" %></td>
-    </tr>
-
      <tr>
-      <th>筋トレ投稿</th>
       <td><%= link_to "新規投稿",new_muscle_post_path %></td>
       <td><%= link_to "他の投稿を見る",muscle_posts_path %></td>
       <td><%= link_to "いいね一覧を見る" %></td>
     </tr>
   </table>
+  <% else %>
+    <% if current_customer.following?(@customer) %>
+      <%= link_to "フォロー外す", customer_relationships_path(@customer.id), method: :delete %>
+    <% else %>
+      <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :post %>
+    <% end %>
   <% end %>
-  
-  
+
 <h1>過去の投稿</h1>
   <table>
-    <thead>
-      <tr>
-        <td></td>
-      </tr>
-    </thead>
     <tbody>
     <% @muscle_posts.each do |muscle_post| %>
     <tr>
       <td><%= muscle_post.muscle_menu.name %></td>
       <td><%= muscle_post.weight %>kgを<%= muscle_post.times%>回</td>
-      <td><%= link_to "詳細を見に行く",muscle_post_path(muscle_post.id) %></td>
+      <td><%= link_to "詳細を見る",muscle_post_path(muscle_post.id) %></td>
     </tr>
     <% end %>
     </tbody>

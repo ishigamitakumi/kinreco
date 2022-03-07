@@ -23,8 +23,8 @@
       <%= f.text_field :experience_years,placeholder: "半角数字",size: "4×2" %>年
     </div>
     <div>
-      <%= f.label :introduction_text, "ひとこと紹介文(20文字以内)"%></br>
-      <%= f.text_area :introduction_text,maxlength: "20" %>
+      <%= f.label :introduction_text, "ひとこと紹介文"%></br>
+      <%= f.text_area :introduction_text,placeholder: "20文字以内",maxlength: "20" %>
     </div>
     <div>
       <%= f.submit "編集内容を保存する" %>
