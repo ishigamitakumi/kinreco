@@ -12,7 +12,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
 
-root :to => 'homes#top'
+root :to => 'homes#about'
 get "homes/about" => "homes#about"
 
 scope module: :public do
@@ -25,6 +25,7 @@ end
 resources :muscle_posts, only: [:new,:create,:index,:show, :edit, :update,:destroy] do
   resource :favorites, only: [:create,:destroy]
   end
+resources :muscle_menus, only: [:show]
 end
 
 namespace :admin do

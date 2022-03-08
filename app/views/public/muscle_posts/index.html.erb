@@ -1,4 +1,4 @@
-<table cellspacing="15">
+<table>
   <thead>
     <tr>
       <th>ユーザー</th>
@@ -25,3 +25,8 @@
     <% end %>
   </tbody>
 </table>
+<% @muscle_menus.each do |muscle_menu| %>
+<%= link_to muscle_menu_path(muscle_menu.id) do %>
+<%= muscle_menu.name %><br>
+<% end %>
+<% end %>
