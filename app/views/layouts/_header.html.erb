@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark header">
+  <div class="container">
+   <%= link_to homes_about_path, class: "navbar-brand" do %>
+   <%= image_tag 'logo2.png', size: "170x60" %>
+   <% end %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto row header-list">
+          <% if admin_signed_in? %>
+            <li>
+              <%= link_to "筋トレメニュ一覧", admin_muscle_menus_path %>
+            </li>
+            <li>
+              <%= link_to "会員一覧", admin_customers_path %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+            </li>
+            <% else %>
+            <% if customer_signed_in? %>
+            <li>
+              <%= link_to customer_path(current_customer) do %>
+              <i class="fa-solid fa-user"></i>マイページ
+              <% end %>
+            </li>
+            <li>
+              <%= link_to customers_calendar_path do %>
+              <i class="fa-solid fa-calendar"></i>カレンダー
+              <% end %>
+
+            </li>
+            <li>
+              <%= link_to new_muscle_post_path do  %>
+              <i class="fa-solid fa-folder-plus"></i>投稿
+              <% end %>
+            </li>
+            <li>
+              <%= link_to muscle_posts_path do %>
+              <i class="fa-solid fa-users"></i>他の人の投稿を見る
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_customer_session_path, method: :delete do %>
+              <i class="fa-solid fa-right-from-bracket"></i>ログアウト
+              <% end %>
+            </li>
+            <% else %>
+            <li>
+              <%= link_to "about",homes_about_path %>
+            </li>
+            <li>
+              <%= link_to "新規登録",new_customer_registration_path %>
+            </li>
+            <li>
+              <%= link_to "ログイン",new_customer_session_path %>
+            </li>
+            <% end %>
+          <% end %>
+          </ul>
+      </div>
+  </div>
+</nav>

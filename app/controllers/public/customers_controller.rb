@@ -22,6 +22,12 @@ class Public::CustomersController < ApplicationController
   def  calendar
   end
 
+  def favorites
+    @customer = Customer.find(params[:id])
+    favorites= Favorite.where(customer_id: @customer.id).pluck(:muscle_post_id)
+    @favorite_posts = MusclePost.find(favorites)
+  end
+
   private
 
     def customer_params
