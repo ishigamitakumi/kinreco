@@ -1,4 +1,4 @@
 class Public::MuscleMenusController < ApplicationController
-  def show
+  def index
   end
 end

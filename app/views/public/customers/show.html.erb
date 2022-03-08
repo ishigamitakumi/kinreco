@@ -44,7 +44,7 @@
          <tr>
           <td><%= link_to "新規投稿",new_muscle_post_path %></td>
           <td><%= link_to "他の投稿を見る",muscle_posts_path %></td>
-          <td><%= link_to "いいね一覧を見る" %></td>
+          <td><%=link_to"いいね一覧",favorites_customer_path(@customer) %></td>
         </tr>
       </table>
       <% else %>

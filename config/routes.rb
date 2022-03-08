@@ -21,11 +21,14 @@ resources :customers, only: [:show,:index, :edit, :update] do
   resource :relationships, only: [:create,:destroy]
   get "followings" => "relationships#followings", as: "followings"
   get "followers" => "relationships#followers", as: "followers"
+   member do
+      get :favorites
+    end
 end
 resources :muscle_posts, only: [:new,:create,:index,:show, :edit, :update,:destroy] do
   resource :favorites, only: [:create,:destroy]
   end
-resources :muscle_menus, only: [:show]
+resources :muscle_menus, only: [:index]
 end
 
 namespace :admin do
