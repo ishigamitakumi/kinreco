@@ -70,5 +70,22 @@
   width: 70%;/*横幅*/
   margin: 0 auto;/*中央寄せ*/
   padding: 50px;
+}
 
+
+table {
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+.registration-form{
+  width: 70%;
+  margin:0 auto;
+  padding: 50px ;
+}
+
+.sessions-form{
+  width: 70%;
+  margin:0 auto;
+  padding: 50px ;
 }
