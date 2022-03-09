@@ -17,6 +17,7 @@
 .profile-container{
   width: 70%;
   margin:0 auto;
+  padding: 50px ;
   display:flex;
   justify-content: space-between;
 }
@@ -43,4 +44,31 @@
 
 .post:last-child{
   width: 33%;
+}
+
+.new-post{
+  width: 70%;/*横幅*/
+  margin: 0 auto;/*中央寄せ*/
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.caution{
+ color: #2196F3;
+}
+
+.new-post-child{
+  margin: 10px;
+}
+
+.icon{
+  margin-left: 160px;
+}
+
+.customers-index{
+  width: 70%;/*横幅*/
+  margin: 0 auto;/*中央寄せ*/
+  padding: 50px;
+
 }

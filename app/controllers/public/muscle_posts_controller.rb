@@ -25,6 +25,12 @@ class Public::MusclePostsController < ApplicationController
   end
 
   def update
+     @muscle_post = MusclePost.find(params[:id])
+    if @muscle_post.update(muscle_post_params)
+      redirect_to muscle_post_path(@muscle_post)
+    else
+      render "edit"
+    end
   end
 
   def destroy
