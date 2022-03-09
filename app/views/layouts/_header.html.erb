@@ -1,8 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark header">
-  <div class="container">
+  <div class ="icon">
    <%= link_to homes_about_path, class: "navbar-brand" do %>
-   <%= image_tag 'logo2.png', size: "170x60" %>
+   <%= image_tag 'logo4.jpg', size: "150x75" %>
    <% end %>
+  </div>
+  <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,28 +24,28 @@
             <% if customer_signed_in? %>
             <li>
               <%= link_to customer_path(current_customer) do %>
-              <i class="fa-solid fa-user"></i>マイページ
+              <i class="fa-solid fa-user link-icon"></i><span class='sample'>マイページ</span>
               <% end %>
             </li>
             <li>
               <%= link_to customers_calendar_path do %>
-              <i class="fa-solid fa-calendar"></i>カレンダー
+              <i class="fa-solid fa-calendar link-icon"></i><span class='sample'>カレンダー</span>
               <% end %>
 
             </li>
             <li>
               <%= link_to new_muscle_post_path do  %>
-              <i class="fa-solid fa-folder-plus"></i>投稿
+              <i class="fa-solid fa-folder-plus link-icon"></i><span class='sample'>投稿する</span>
               <% end %>
             </li>
             <li>
               <%= link_to muscle_posts_path do %>
-              <i class="fa-solid fa-users"></i>他の人の投稿を見る
+              <i class="fa-solid fa-users link-icon"></i><span class='sample'>他の人の投稿</span>
               <% end %>
             </li>
             <li>
               <%= link_to destroy_customer_session_path, method: :delete do %>
-              <i class="fa-solid fa-right-from-bracket"></i>ログアウト
+              <i class="fa-solid fa-right-from-bracket link-icon"></i><span class='sample'>ログアウト</span>
               <% end %>
             </li>
             <% else %>
@@ -62,3 +64,22 @@
       </div>
   </div>
 </nav>
+<script>
+  $(function(){
+    $('.sample').mouseover(function(e){
+      $(this).css('color','#FFCC66');
+    });
+    $('.sample').mouseout(function(e){
+      $(this).css('color','#333333');
+    });
+    $('.link-icon').mouseover(function(e){
+      $(this).parent().find('.sample').css('color','#FFCC66');
+    });
+    $('.link-icon').mouseout(function(e){
+      $(this).parent().find('.sample').css('color','#333333');
+    });
+
+
+  });
+
+</script>

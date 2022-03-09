@@ -1,16 +1,6 @@
-<div class= "container">
-  <table cellspacing="15">
-    <thead>
-      <tr>
-        <th>イメージ</th>
-        <th>氏名</th>
-        <th>年齢</th>
-        <th>性別</th>
-        <th>筋トレ歴</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
+<div class= "customers-index">
+  <h2>他のユーザー</h2>
+  <table>
     <tbody>
       <% @customers.each do |customer| %>
         <tr>
@@ -24,16 +14,14 @@
           </td>
           <td><%= customer.age %></td>
           <td><%= customer.sex %></td>
-          <td><%= customer.experience_years %>年</td>
+          <td>筋トレ歴<%= customer.experience_years %>年</td>
           <td><%= customer.introduction_text %></td>
           <td>
-            <% unless customer == current_customer %>
               <% if current_customer.following?(customer) %>
                 <%= link_to "フォロー外す", customer_relationships_path(customer.id), method: :delete %>
               <% else %>
                 <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %>
-                <% end %></td>
-            <% end %>
+              <% end %></td>
           </td>
         </tr>
       <% end %>

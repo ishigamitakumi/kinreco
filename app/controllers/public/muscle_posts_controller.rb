@@ -1,7 +1,10 @@
 class Public::MusclePostsController < ApplicationController
   before_action :authenticate_customer!
   before_action :correct_user, only: [:edit, :update]
-
+  
+  def new
+    @muscle_post = MusclePost.new
+  end
   def create
     @muscle_post = MusclePost.new(muscle_post_params)
     @muscle_post.customer = current_customer
@@ -25,6 +28,12 @@ class Public::MusclePostsController < ApplicationController
   end
 
   def update
+     @muscle_post = MusclePost.find(params[:id])
+    if @muscle_post.update(muscle_post_params)
+      redirect_to muscle_post_path(@muscle_post)
+    else
+      render "edit"
+    end
   end
 
   def destroy
@@ -36,7 +45,7 @@ class Public::MusclePostsController < ApplicationController
    private
 
     def muscle_post_params
-      params.permit(:muscle_menu_id,:post_image,:sentence,:weight,:times,:body_weight)
+      params.require(:muscle_post).permit(:muscle_menu_id,:post_image,:sentence,:weight,:times,:body_weight)
     end
 
     def correct_user
