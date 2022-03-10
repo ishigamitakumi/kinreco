@@ -33,8 +33,8 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
 
       t.string :name
-      t.integer :age
-      t.integer :sex
+      t.integer :age,default: 0
+      t.integer :sex,default: 0
       t.string :introduction_text
       t.integer :experience_years
 

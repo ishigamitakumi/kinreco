@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>ユーザー</th>
+      <th>年齢</th>
+      <th>性別</th>
+      <th>メニュー</th>
+      <th>重量・回数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @muscle_posts.each do |muscle_post| %>
+      <tr>
+        <td>
+          <%= link_to muscle_post_path(muscle_post.id) do %>
+          <%= muscle_post.customer.name %>さんの投稿
+          <% end %>
+          </td>
+        <td><%= muscle_post.customer.age %></td>
+        <td><%= muscle_post.customer.sex %></td>
+        <td><%= muscle_post.muscle_menu.name %></td>
+        <td><%= muscle_post.weight%>kgを<%= muscle_post.times %>回</td>
+        <td><%= render "public/favorites/favorite", muscle_post: muscle_post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= render "public/muscle_menus/search" %>

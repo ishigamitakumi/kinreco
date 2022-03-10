@@ -1,0 +1,33 @@
+<h1>customer/edit</h1>
+<%= form_with model: @customer,url: customer_path(@customer.id), local:true do |f| %>
+    <div>
+      <%= f.label :image %>
+      <%= f.file_field :profile_image, accept: 'image/*' %>
+    </div>
+    <div>
+      <%= f.label :name, "氏名"%>
+      <%= f.text_field :name, placeholder: "氏名" %>
+    </div>
+    <div>
+      <%= f.label :email, "メールアドレス"%>
+      <%= f.text_field :email %>
+    </div>
+      <%= f.label :age, "年齢"%>
+      <%= f.select :age, Customer.ages.keys %>
+    <div>
+      <%= f.label :sex, "性別"%>
+      <%= f.select :sex, Customer.sexes.keys %>
+    </div>
+    <div>
+      <%= f.label :experience_years, "筋トレ歴"%>
+      <%= f.text_field :experience_years,placeholder: "半角数字",size: "4×2" %>年
+    </div>
+    <div>
+      <%= f.label :introduction_text, "ひとこと紹介文"%></br>
+      <%= f.text_area :introduction_text,placeholder: "20文字以内",maxlength: "20" %>
+    </div>
+    <div>
+      <%= f.submit "編集内容を保存する" %>
+    </div>
+    </div>
+  <% end %>

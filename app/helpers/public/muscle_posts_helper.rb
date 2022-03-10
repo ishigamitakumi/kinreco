@@ -1,0 +1,2 @@
+module Public::MusclePostsHelper
+end

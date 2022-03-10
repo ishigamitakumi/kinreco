@@ -1,0 +1,23 @@
+<%= link_to customer_path(@muscle_post.customer.id) do %>
+<%= @muscle_post.customer.name %>
+<% end %>
+さんの投稿
+<table cellspacing="15">
+  <tr>
+    <td><%= @muscle_post.muscle_menu.name %></td>
+    <td><%= @muscle_post.weight %>kgを<%= @muscle_post.times%>回</td>
+    <td><%= @muscle_post.sentence%></td>
+    <td><%= image_tag @muscle_post.get_post_image,size: "80x80" %></td>
+<% if @muscle_post.customer == current_customer %>
+      <td>体重<%= @muscle_post.body_weight%>kg</td>
+  </tr>
+  </tr>
+    <td><%= link_to "編集する",edit_muscle_post_path %></td>
+    <td><%= link_to "削除する",muscle_post_path, method: :delete %></td>
+  </tr>
+<% else %>
+<td>
+<%= render "public/favorites/favorite", muscle_post: @muscle_post %>
+</td>
+<% end %>
+</table>

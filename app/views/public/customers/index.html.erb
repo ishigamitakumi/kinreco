@@ -1,0 +1,30 @@
+<div class= "customers-index">
+  <h2>他のユーザー</h2>
+  <table>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td>
+            <%= image_tag customer.get_profile_image, size: '80x80' %>
+          </td>
+          <td>
+            <%= link_to customer_path(customer.id) do %>
+            <%= customer.name %>
+            <% end %>
+          </td>
+          <td><%= customer.age %></td>
+          <td><%= customer.sex %></td>
+          <td>筋トレ歴<%= customer.experience_years %>年</td>
+          <td><%= customer.introduction_text %></td>
+          <td>
+              <% if current_customer.following?(customer) %>
+                <%= link_to "フォロー外す", customer_relationships_path(customer.id), method: :delete %>
+              <% else %>
+                <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %>
+              <% end %></td>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
