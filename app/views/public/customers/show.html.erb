@@ -31,38 +31,41 @@
           <td>フォロワー　<%= link_to "#{@customer.followers.count} ", customer_followers_path(@customer.id)%></td>
         </tr>
       </table>
-      <% if @customer == current_customer %>
 
+      <% if @customer == current_customer %>
       <table>
         <tr>
-          <td class= "customer-link">
+          <td class ="customer-link">
             <%= link_to edit_customer_path do %>
             <i class="fa-solid fa-user-gear"></i><span>編集する</span>
             <% end %>
           </td>
-          <td class= "customer-link">
-            <%= link_to new_muscle_post_path do %>
-          <i class="fa-solid fa-pen"></i><span>投稿する</span>
-          <% end %>
-          </td>
-          <td class= "customer-link">
+          <td class ="customer-link">
             <%=link_to favorites_customer_path(@customer) do %>
-          <i class="fa-solid fa-heart"></i><span>いいね一覧</span>
-          <% end %>
+            <i class="fa-solid fa-heart"></i><span>いいね一覧</span>
+            <% end %>
           </td>
-        </tr>
+        <tr>
       </table>
       <% else %>
-        <% if current_customer.following?(@customer) %>
-          <%= link_to "フォロー外す", customer_relationships_path(@customer.id), method: :delete %>
-        <% else %>
-          <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :post %>
-        <% end %>
+      <table>
+        <tr>
+          <% if current_customer.following?(@customer) %>
+          <td>
+            <%= link_to "フォロー外す", customer_relationships_path(@customer.id), method: :delete %>
+          </td>
+          <% else %>
+          <td>
+            <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :post %>
+          </td>
+          <% end %>
+        </tr>
+      </table>
       <% end %>
 
       <h1>カレンダー??</h1>
+</div>
 
-    </div>
     <div class= "customer-post">
     <h3>過去の投稿</h3>
         <% @muscle_posts.each do |muscle_post| %>
