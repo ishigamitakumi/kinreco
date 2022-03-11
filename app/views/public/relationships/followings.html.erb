@@ -1,21 +1,23 @@
-<h1>フォロー</h1>
-<% if @customers.exists? %>
-<table cellspacing="15">
-    <% @customers.each do |customer| %>
-      <tr>
-        <td><%= image_tag customer.get_profile_image, size: '40x40'%></td>
-        <td>
-          <%= link_to customer_path(customer.id) do %>
-          <%= customer.name %>
-          <% end %>
-        </td>
-        <td>フォロー数：<%= link_to "#{customer.followings.count} ",customer_followings_path(customer.id)  %></td>
-        <td>フォロワー数：<%= link_to "#{customer.followers.count} ", customer_followers_path(customer.id)  %></td>
-      </tr>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+<div class= "customers">
+  <h2>フォロー</h2>
+  <% if @customers.exists? %>
+  <table cellspacing="15">
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= image_tag customer.get_profile_image, size: '40x40'%></td>
+          <td>
+            <%= link_to customer_path(customer.id) do %>
+            <%= customer.name %>
+            <% end %>
+          </td>
+          <td>フォロー数：<%= link_to "#{customer.followings.count} ",customer_followings_path(customer.id)  %></td>
+          <td>フォロワー数：<%= link_to "#{customer.followers.count} ", customer_followers_path(customer.id)  %></td>
+        </tr>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+    <p>ユーザーはいません</p>
+  <% end %>
+</div>

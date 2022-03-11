@@ -1,7 +1,7 @@
 class Public::MusclePostsController < ApplicationController
   before_action :authenticate_customer!
   before_action :correct_user, only: [:edit, :update]
-  
+
   def new
     @muscle_post = MusclePost.new
   end
@@ -20,7 +20,7 @@ class Public::MusclePostsController < ApplicationController
   end
 
   def index
-    @muscle_posts = MusclePost.where.not(id: current_customer.muscle_posts.ids) #他のユーザーの投稿だけを取得する
+    @muscle_posts = MusclePost.where.not(id: current_customer.muscle_posts.ids).page(params[:page]).per(10) #他のユーザーの投稿だけを取得する
   end
 
   def edit
@@ -40,6 +40,11 @@ class Public::MusclePostsController < ApplicationController
     @muscle_post = MusclePost.find(params[:id])
     @muscle_post.destroy
     redirect_to muscle_posts_path
+  end
+
+  def tl
+    @customer = Customer.find(current_customer.id)
+    @muscle_posts = MusclePost.where(customer_id: followings_ids)
   end
 
    private

@@ -1,6 +1,10 @@
-<div class= "customers-index">
-  <h2>他のユーザー</h2>
-  <table>
+<div class= "customers">
+  <div class= "index-link">
+    <div><%= link_to "ユーザー一覧",customers_path %></div>
+    <div><%= link_to "投稿一覧",muscle_posts_path %></div>
+    <div><%= link_to "タイムライン", muscle_posts_tl_path %></div>
+  </div>
+  <table class= "index1">
     <tbody>
       <% @customers.each do |customer| %>
         <tr>
@@ -27,4 +31,7 @@
       <% end %>
     </tbody>
   </table>
+      <div class="d-flex justify-content-center">
+        <%= paginate @customers %>
+      </div>
 </div>

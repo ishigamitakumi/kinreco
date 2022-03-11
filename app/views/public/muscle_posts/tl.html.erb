@@ -4,6 +4,7 @@
     <div><%= link_to "投稿一覧",muscle_posts_path %></div>
     <div><%= link_to "タイムライン",muscle_posts_tl_path %></div>
   </div>
+</div>
     <table class= "index1">
       <tbody>
         <% @muscle_posts.each do |muscle_post| %>
@@ -19,11 +20,10 @@
               詳細
               <% end %>
             </td>
+
           </tr>
         <% end %>
       </tbody>
     </table>
-      <div class="d-flex justify-content-center">
-        <%= paginate @muscle_posts %>
-      </div>
+    
 </div>

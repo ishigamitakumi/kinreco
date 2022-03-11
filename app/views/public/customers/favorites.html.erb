@@ -1,4 +1,21 @@
-<h1>いいね一覧</h1>
-<% @favorite_posts.each do |post|%>
-<%=post.sentence %>
-<% end %>
+<div class= "favorite-post">
+
+  <h2>いいね一覧</h2>
+
+  <table class= "favorite-index">
+  <% @favorite_posts.each do |post|%>
+    <tr>
+      <td><%= post.customer.name %>さんの投稿</td>
+      <td><%=post.customer.age %></td>
+      <td><%=post.customer.sex %></td>
+      <td><%= post.muscle_menu.name %></td>
+      <td><%= post.weight%>kgを<%= post.times %>回</td>
+      <td>
+        <%= link_to muscle_post_path(post.id) do %>
+          詳細
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>

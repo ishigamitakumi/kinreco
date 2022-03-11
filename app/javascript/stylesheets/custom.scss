@@ -66,7 +66,7 @@
   margin-left: 160px;
 }
 
-.customers-index{
+.customers{
   width: 70%;/*横幅*/
   margin: 0 auto;/*中央寄せ*/
   padding: 50px;
@@ -92,4 +92,54 @@ table {
 
 .sample{
   color:#333333 ;
+}
+
+// .customer-link{
+// color:#333333;
+// }
+
+.about-page{
+  width: 70%;
+  margin:0 auto;
+  padding: 50px ;
+}
+
+.wellcome{
+  text-align: center;
+}
+
+.customer-edit-child1{
+  padding-left: 150px;
+  margin-bottom: 30px;
+}
+
+.customer-edit-child{
+  padding-left: 150px;
+  margin-bottom: 10px;
+}
+.favorite-post{
+  width: 70%;
+  margin:0 auto;
+  padding: 50px ;
+}
+
+.favorite-index{
+  margin:0 auto;
+}
+
+.post-index{
+  width: 70%;
+  margin:0 auto;
+  padding: 50px ;
+}
+
+.index-link{
+  margin-bottom: 30px;
+  padding-left: 150px;
+  padding-right: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+.index1{
+  margin:0 auto;
 }
