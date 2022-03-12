@@ -1,0 +1,10 @@
+<%= month_calendar events: @muscle_posts, attribute: :created_at do |date,muscle_posts| %>
+  <%= date.day %>
+  <% muscle_posts.each do |muscle_post| %>
+    <div>
+      <%= link_to muscle_post_path(muscle_post.id) do %>
+      <%= muscle_post.muscle_menu.name %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

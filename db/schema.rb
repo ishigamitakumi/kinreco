@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2022_03_05_084206) do
   create_table "muscle_posts", force: :cascade do |t|
     t.string "customer_id"
     t.string "muscle_menu_id"
-    t.string "weight"
+    t.integer "weight"
     t.integer "times"
     t.integer "body_weight"
     t.string "sentence"
