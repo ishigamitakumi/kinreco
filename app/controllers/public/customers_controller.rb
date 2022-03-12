@@ -20,6 +20,7 @@ class Public::CustomersController < ApplicationController
     end
   end
   def  calendar
+    @muscle_posts = current_customer.muscle_posts
   end
 
   def favorites

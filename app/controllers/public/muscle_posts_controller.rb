@@ -58,7 +58,7 @@ class Public::MusclePostsController < ApplicationController
    private
 
     def muscle_post_params
-      params.require(:muscle_post).permit(:muscle_menu_id,:post_image,:sentence,:weight,:times,:body_weight)
+      params.require(:muscle_post).permit(:muscle_menu_id,:post_image,:sentence,:weight,:times,:body_weight,:start_time)
     end
 
     def correct_user
