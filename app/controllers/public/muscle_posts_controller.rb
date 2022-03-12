@@ -44,7 +44,15 @@ class Public::MusclePostsController < ApplicationController
 
   def tl
     @customer = Customer.find(current_customer.id)
-    @muscle_posts = MusclePost.where(customer_id: followings_ids)
+
+    muscle_post_ids = []
+    @customer.followings.each do |follow|
+      follow.muscle_posts.each do |muscle_post|
+        muscle_post_ids.push(muscle_post.id)
+      end
+    end
+    muscle_post_ids = muscle_post_ids.sort_by{|x| x}
+    @muscle_posts = MusclePost.find(muscle_post_ids)
   end
 
    private

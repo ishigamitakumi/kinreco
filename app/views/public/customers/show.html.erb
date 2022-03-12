@@ -65,7 +65,7 @@
 
       <h1>カレンダー??</h1>
       あなたのレベルは<%= current_customer.muscle_posts.count.div(2)%>
-      今までの総重量は
+      今までの総重量は<%= current_customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %>kg
 </div>
 
     <div class= "customer-post">
