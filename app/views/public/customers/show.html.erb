@@ -35,14 +35,14 @@
       <% if @customer == current_customer %>
       <table class= "profile-table">
         <tr>
-          <td class ="customer-link">
+          <td>
             <%= link_to edit_customer_path do %>
-            <i class="fa-solid fa-user-gear"></i><span>編集する</span>
+            <i class="fa-solid fa-user-gear link-icon2"></i><span class='sample2'>編集する</span>
             <% end %>
           </td>
-          <td class ="customer-link">
+          <td>
             <%=link_to favorites_customer_path(@customer) do %>
-            <i class="fa-solid fa-heart"></i><span>いいね一覧</span>
+            <i class="fa-solid fa-heart link-icon2"></i><span class='sample2'>いいね一覧</span>
             <% end %>
           </td>
         <tr>
@@ -88,3 +88,23 @@
         </div>
     </div>
 </div>
+
+<script>
+  $(function(){
+    $('.sample2').mouseover(function(e){
+      $(this).css('color','#333333');
+    });
+    $('.sample2').mouseout(function(e){
+      $(this).css('color','#FFFFDD');
+    });
+    $('.link-icon2').mouseover(function(e){
+      $(this).parent().find('.sample2').css('color','#333333');
+    });
+    $('.link-icon2').mouseout(function(e){
+      $(this).parent().find('.sample2').css('color','#FFFFDD');
+    });
+
+
+  });
+
+</script>
