@@ -8,7 +8,8 @@
       <tbody>
         <% @muscle_posts.each do |muscle_post| %>
           <tr>
-            <td><%= muscle_post.customer.name %>さんの投稿</td>
+            <td><%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%></td>
+            <td><%= muscle_post.customer.name %></td>
             <td><%= muscle_post.customer.age %></td>
             <td><%= muscle_post.customer.sex %></td>
             <td><%= muscle_post.muscle_menu.name %></td>

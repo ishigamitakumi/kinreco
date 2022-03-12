@@ -4,7 +4,7 @@
   <table class= "follow-table">
       <% @customers.each do |customer| %>
         <tr>
-          <td><%= image_tag customer.get_profile_image, size: '40x40'%></td>
+          <td><%= image_tag customer.get_profile_image, size: '60x60'%></td>
           <td>
             <%= link_to customer_path(customer.id) do %>
             <%= customer.name %>

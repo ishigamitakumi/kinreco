@@ -28,7 +28,7 @@ class Public::CustomersController < ApplicationController
 #    favorites= Favorite.where(customer_id: @customer.id).pluck(:muscle_post_id)
 #    @favorite_posts = MusclePost.find(favorites).page(params[:page]).per(10)
     @favorite_posts = MusclePost.joins(:favorites).where(favorites:{customer_id: @customer.id}).page(params[:page]).per(10)
-
+    #findメソッドにpageが効かないので変更
   end
 
   private
