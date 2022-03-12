@@ -72,12 +72,6 @@
   padding: 50px;
 }
 
-
-table {
-  border-collapse: separate;
-  border-spacing: 15px;
-}
-
 .registration-form{
   width: 70%;
   margin:0 auto;
@@ -124,6 +118,8 @@ table {
 }
 
 .favorite-index{
+  border-collapse: separate;
+  border-spacing: 15px;
   margin:0 auto;
 }
 
@@ -141,5 +137,18 @@ table {
   justify-content: space-between;
 }
 .index1{
+  border-collapse: separate;
+  border-spacing: 15px;
   margin:0 auto;
+}
+
+.calendar-page{
+  width: 70%;
+  margin:0 auto;
+  padding: 50px ;
+}
+
+.profile-table{
+  border-collapse: separate;
+  border-spacing: 15px;
 }

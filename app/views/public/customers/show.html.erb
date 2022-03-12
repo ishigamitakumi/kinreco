@@ -1,6 +1,6 @@
 <div class = "profile-container">
   <div class ="profile">
-      <table>
+      <table class= "profile-table">
         <tr>
           <td>
             <%= image_tag @customer.get_profile_image, size: '80x80' %>
@@ -33,7 +33,7 @@
       </table>
 
       <% if @customer == current_customer %>
-      <table>
+      <table class= "profile-table">
         <tr>
           <td class ="customer-link">
             <%= link_to edit_customer_path do %>

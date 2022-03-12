@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(version: 2022_03_05_084206) do
     t.integer "times"
     t.integer "body_weight"
     t.string "sentence"
-    t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

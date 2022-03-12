@@ -7,7 +7,6 @@ class CreateMusclePosts < ActiveRecord::Migration[6.1]
       t.integer :times
       t.integer :body_weight
       t.string :sentence
-      t.datetime :start_time
 
       t.timestamps
     end
