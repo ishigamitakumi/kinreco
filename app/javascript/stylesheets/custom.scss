@@ -36,10 +36,12 @@
 
 .post:first-child{
   width: 33%;
+  padding: 20px;
 }
 
 .post:nth-child(2){
   width: 33%;
+  padding: 20px;
 }
 
 .post:last-child{
@@ -151,4 +153,67 @@
 .profile-table{
   border-collapse: separate;
   border-spacing: 15px;
+}
+
+.follow-table{
+  border-collapse: separate;
+  border-spacing: 15px;
+  margin:0 auto;
+}
+
+.btn-circle-flat {
+  display: inline-block;
+  text-decoration: none;
+  background: #87befd;
+  color: #FFF;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.btn-circle-flat:hover {
+  background: #668ad8;
+  color: #FFF;
+}
+
+.btn-circle-flat2 {
+  display: inline-block;
+  text-decoration: none;
+  background: #009900;
+  color: #FFF;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.btn-circle-flat2:hover {
+  background: #336633;
+  color: #FFF;
+}
+
+.btn-circle-flat3 {
+  display: inline-block;
+  text-decoration: none;
+  background: #CC0000;
+  color: #FFF;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.btn-circle-flat3:hover {
+  background: #990000;
+  color: #FFF;
 }

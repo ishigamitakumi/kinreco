@@ -79,7 +79,7 @@
         <%= muscle_post.weight %>kgを<%= muscle_post.times%>回
         </div>
         <div class= "post">
-        <%= link_to "詳細を見る",muscle_post_path(muscle_post.id) %>
+        <%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %>
         </div>
       </div>
         <% end %>

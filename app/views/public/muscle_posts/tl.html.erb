@@ -14,15 +14,11 @@
             <td><%= muscle_post.muscle_menu.name %></td>
             <td><%= muscle_post.weight%>kgを<%= muscle_post.times %>回</td>
             <td><%= render "public/favorites/favorite", muscle_post: muscle_post %></td>
-            <td>
-              <%= link_to muscle_post_path(muscle_post.id) do %>
-              詳細
-              <% end %>
-            </td>
+            <td><%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %></td>
 
           </tr>
         <% end %>
       </tbody>
     </table>
-    
+
 </div>

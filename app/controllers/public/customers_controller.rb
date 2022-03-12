@@ -27,6 +27,7 @@ class Public::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     favorites= Favorite.where(customer_id: @customer.id).pluck(:muscle_post_id)
     @favorite_posts = MusclePost.find(favorites)
+    # .page(params[:page]).per(10)
   end
 
   private

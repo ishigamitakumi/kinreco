@@ -1,7 +1,7 @@
 <div class= "customers">
   <h2>フォロワー</h2>
   <% if @customers.exists? %>
-  <table cellspacing="15">
+  <table class= "follow-table">
       <% @customers.each do |customer| %>
         <tr>
           <td><%= image_tag customer.get_profile_image, size: '40x40'%></td>
@@ -18,4 +18,7 @@
   <% else %>
     <p>ユーザーはいません</p>
   <% end %>
+    <div class="d-flex justify-content-center">
+      <%= paginate @customers %>
+    </div>
 </div>
