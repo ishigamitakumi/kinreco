@@ -1,11 +1,23 @@
-.header{
+header{
   background-color: #333333;
   }
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  height: 110px;
+  text-align: center;
+  background-color: #333333;
+}
+.footer-text{
+  padding: 20px;
+  color:white;
+}
 
 
 .header-list li a{
   margin-right: 15px;
-  color: #FFCC66
+  color: #FFCC66;
 }
 
 
