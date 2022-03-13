@@ -11,7 +11,7 @@ class Public::MusclePostsController < ApplicationController
     if @muscle_post.save
       redirect_to muscle_post_path(@muscle_post.id)
     else
-     redirect_back(fallback_location: root_path)
+     render "new"
     end
   end
 
