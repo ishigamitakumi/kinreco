@@ -31,6 +31,11 @@ class Public::CustomersController < ApplicationController
     #findメソッドにpageが効かないので変更
   end
 
+  def result
+     @customers = Customer.where(age: params[:age],sex: params[:sex])
+     @customer = current_customer
+  end
+
   private
 
     def customer_params

@@ -1,0 +1,5 @@
+<%= form_with url: "customers/result", method: :get do |form| %>
+<%= form.select :age, Customer.ages.keys, {} %>
+<%= form.select :sex, Customer.sexes.keys, {} %>
+<%= submit_tag("検索", class: "btn btn-large btn-primary") %>
+<% end %>
