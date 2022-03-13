@@ -9,7 +9,7 @@
       <% @customers.each do |customer| %>
         <tr>
           <td>
-            <%= image_tag customer.get_profile_image, size: '80x80' %>
+            <%= image_tag customer.get_profile_image, size: '60x60' %>
           </td>
           <td>
             <%= link_to customer_path(customer.id) do %>
@@ -22,9 +22,9 @@
           <td><%= customer.introduction_text %></td>
           <td>
               <% if current_customer.following?(customer) %>
-                <%= link_to "フォロー外す", customer_relationships_path(customer.id), method: :delete %>
+                <%= link_to "フォロー外す", customer_relationships_path(customer.id), method: :delete,class: "btn-square-little-rich" %>
               <% else %>
-                <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %>
+                <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post,class: "btn-square-little-rich" %>
               <% end %></td>
           </td>
         </tr>

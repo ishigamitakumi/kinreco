@@ -35,14 +35,14 @@
       <% if @customer == current_customer %>
       <table class= "profile-table">
         <tr>
-          <td class ="customer-link">
+          <td>
             <%= link_to edit_customer_path do %>
-            <i class="fa-solid fa-user-gear"></i><span>編集する</span>
+            <i class="fa-solid fa-user-gear link-icon2"></i><span class='sample2'>編集する</span>
             <% end %>
           </td>
-          <td class ="customer-link">
+          <td>
             <%=link_to favorites_customer_path(@customer) do %>
-            <i class="fa-solid fa-heart"></i><span>いいね一覧</span>
+            <i class="fa-solid fa-heart link-icon2"></i><span class='sample2'>いいね一覧</span>
             <% end %>
           </td>
         <tr>
@@ -52,39 +52,61 @@
         <tr>
           <% if current_customer.following?(@customer) %>
           <td>
-            <%= link_to "フォロー外す", customer_relationships_path(@customer.id), method: :delete %>
+            <%= link_to "フォロー外す", customer_relationships_path(@customer.id), method: :delete,class: "btn-square-little-rich" %>
           </td>
           <% else %>
           <td>
-            <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :post %>
+            <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :post,class: "btn-square-little-rich" %>
           </td>
           <% end %>
         </tr>
       </table>
       <% end %>
 
-      <h1>カレンダー??</h1>
-      あなたのレベルは<%= @customer.muscle_posts.count.div(2)%>
-      今までの総重量は<%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %>kg
+      <div class= "result">
+        <h3 class= "weight-result">
+          今までの総重量は<span><%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %></span>kg
+          </h3>
+        <h3 class= "post-result">
+           あなたのレベル
+           <span><%= @customer.muscle_posts.count.div(10)%></span>
+        </h3>
+      </div>
+  </div>
+  <div class= "customer-post">
+  <h3>過去の投稿</h3>
+      <% @muscle_posts.each do |muscle_post| %>
+    <div class= "post-list">
+      <div class= "post">
+      <%= muscle_post.muscle_menu.name %>
+      </div>
+      <div class= "post">
+      <%= muscle_post.weight %>kgを<%= muscle_post.times%>回
+      </div>
+      <div class= "post">
+      <%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %>
+      </div>
+    </div>
+      <% end %>
+      <div class="d-flex justify-content-center">
+        <%= paginate @muscle_posts %>
+      </div>
+  </div>
 </div>
 
-    <div class= "customer-post">
-    <h3>過去の投稿</h3>
-        <% @muscle_posts.each do |muscle_post| %>
-      <div class= "post-list">
-        <div class= "post">
-        <%= muscle_post.muscle_menu.name %>
-        </div>
-        <div class= "post">
-        <%= muscle_post.weight %>kgを<%= muscle_post.times%>回
-        </div>
-        <div class= "post">
-        <%= link_to "詳細を見る",muscle_post_path(muscle_post.id) %>
-        </div>
-      </div>
-        <% end %>
-        <div class="d-flex justify-content-center">
-          <%= paginate @muscle_posts %>
-        </div>
-    </div>
-</div>
+<script>
+  $(function(){
+    $('.sample2').mouseover(function(e){
+      $(this).css('color','#333333');
+    });
+    $('.sample2').mouseout(function(e){
+      $(this).css('color','#FFFFDD');
+    });
+    $('.link-icon2').mouseover(function(e){
+      $(this).parent().find('.sample2').css('color','#333333');
+    });
+    $('.link-icon2').mouseout(function(e){
+      $(this).parent().find('.sample2').css('color','#FFFFDD');
+    });
+  });
+</script>

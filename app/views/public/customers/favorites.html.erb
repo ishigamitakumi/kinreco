@@ -11,11 +11,12 @@
       <td><%= post.muscle_menu.name %></td>
       <td><%= post.weight%>kgを<%= post.times %>回</td>
       <td>
-        <%= link_to muscle_post_path(post.id) do %>
-          詳細
-        <% end %>
+        <%= link_to "詳細",muscle_post_path(post.id), class: "btn-circle-flat" %>
       </td>
     </tr>
   <% end %>
   </table>
+    <div class="d-flex justify-content-center">
+     <%= paginate @favorite_posts %>
+    </div>
 </div>

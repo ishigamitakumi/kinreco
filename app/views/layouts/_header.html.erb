@@ -40,7 +40,7 @@
             </li>
             <li>
               <%= link_to muscle_posts_path do %>
-              <i class="fa-solid fa-users link-icon"></i><span class='sample'>他の人の投稿</span>
+              <i class="fa-solid fa-users link-icon"></i><span class='sample'>他のユーザー</span>
               <% end %>
             </li>
             <li>
@@ -78,8 +78,5 @@
     $('.link-icon').mouseout(function(e){
       $(this).parent().find('.sample').css('color','#333333');
     });
-
-
   });
-
 </script>

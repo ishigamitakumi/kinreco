@@ -1,11 +1,23 @@
-.header{
+header{
   background-color: #333333;
   }
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  height: 110px;
+  text-align: center;
+  background-color: #333333;
+}
+.footer-text{
+  padding: 20px;
+  color:white;
+}
 
 
 .header-list li a{
   margin-right: 15px;
-  color: #FFCC66
+  color: #FFCC66;
 }
 
 
@@ -36,10 +48,12 @@
 
 .post:first-child{
   width: 33%;
+  padding: 20px;
 }
 
 .post:nth-child(2){
   width: 33%;
+  padding: 20px;
 }
 
 .post:last-child{
@@ -88,9 +102,13 @@
   color:#333333 ;
 }
 
-// .customer-link{
-// color:#333333;
-// }
+.link-icon2{
+color:#333333;
+}
+
+.sample2{
+ color:#FFFFDD;
+}
 
 .about-page{
   width: 70%;
@@ -151,4 +169,88 @@
 .profile-table{
   border-collapse: separate;
   border-spacing: 15px;
+}
+
+.follow-table{
+  border-collapse: separate;
+  border-spacing: 15px;
+  margin:0 auto;
+}
+
+.btn-circle-flat {
+  display: inline-block;
+  text-decoration: none;
+  background: #87befd;
+  color: #FFF;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.btn-circle-flat:hover {
+  background: #668ad8;
+  color: #FFF;
+}
+
+.btn-circle-flat2 {
+  display: inline-block;
+  text-decoration: none;
+  background: #009900;
+  color: #FFF;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.btn-circle-flat2:hover {
+  background: #336633;
+  color: #FFF;
+}
+
+.btn-circle-flat3 {
+  display: inline-block;
+  text-decoration: none;
+  background: #CC0000;
+  color: #FFF;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.btn-circle-flat3:hover {
+  background: #990000;
+  color: #FFF;
+}
+
+.weight-result span{
+  color: red;
+}
+
+.post-result span{
+  color: red;
+}
+
+.btn-square-little-rich {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #03A9F4;/*色*/
+  border: solid 1px #0f9ada;/*線色*/
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
 }

@@ -8,16 +8,17 @@
       <tbody>
         <% @muscle_posts.each do |muscle_post| %>
           <tr>
-            <td><%= muscle_post.customer.name %>さんの投稿</td>
+            <td><%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%></td>
+            <td><%= muscle_post.customer.name %></td>
             <td><%= muscle_post.customer.age %></td>
             <td><%= muscle_post.customer.sex %></td>
             <td><%= muscle_post.muscle_menu.name %></td>
             <td><%= muscle_post.weight%>kgを<%= muscle_post.times %>回</td>
+            <% unless @customer == current_customer %>
             <td><%= render "public/favorites/favorite", muscle_post: muscle_post %></td>
+            <% end %>
             <td>
-              <%= link_to muscle_post_path(muscle_post.id) do %>
-              詳細
-              <% end %>
+              <%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %>
             </td>
           </tr>
         <% end %>
@@ -25,5 +26,9 @@
     </table>
       <div class="d-flex justify-content-center">
         <%= paginate @muscle_posts %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%= render "public/muscle_menus/search" %>
+        <%= render "public/customers/search" %>
       </div>
 </div>

@@ -17,6 +17,7 @@ get "homes/about" => "homes#about"
 
 scope module: :public do
 get "customers/calendar" => "customers#calendar"
+get "customers/result" => "customers#result"
 get "muscle_posts/tl" => "muscle_posts#tl"
 resources :customers, only: [:show,:index, :edit, :update] do
   resource :relationships, only: [:create,:destroy]
