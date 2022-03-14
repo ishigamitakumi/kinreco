@@ -4,10 +4,10 @@ class MusclePost < ApplicationRecord
   has_many :favorites,dependent: :destroy
   has_one_attached :post_image
 
-  validates :sentence,length: {maximum: 100}
-  validates :weight,numericality: { only_integer: true }
-  validates :body_weight,numericality: { only_integer: true }
-  validates :times,numericality: { only_integer: true }
+  validates :sentence,length: {maximum: 100}, presence: true
+  validates :weight,numericality: { only_integer: true }, presence: true
+  validates :body_weight,numericality: { only_integer: true }, presence: true
+  validates :times,numericality: { only_integer: true }, presence: true
 
   def favorited_by?(customer)
     favorites.exists?(customer_id: customer.id)
