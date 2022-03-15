@@ -4,7 +4,7 @@
     <div><%= link_to "投稿一覧",muscle_posts_path %></div>
     <div><%= link_to "タイムライン",muscle_posts_tl_path %></div>
   </div>
-     <% @muscle_posts.each do |muscle_post| %>
+    <% @muscle_posts.each do |muscle_post| %>
      <div class= "posts-index">
        <div class= "posts-item">
          <%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%>
@@ -31,7 +31,5 @@
         <%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %>
        </div>
      </div>
-        <% end %>
-
-
+    <% end %>
 </div>

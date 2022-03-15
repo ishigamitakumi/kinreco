@@ -52,7 +52,7 @@ class Public::MusclePostsController < ApplicationController
       end
     end
     muscle_post_ids = muscle_post_ids.sort_by{|x| x}
-    @muscle_posts = MusclePost.find(muscle_post_ids)
+    @muscle_posts = MusclePost.find(muscle_post_ids).last(10)
   end
 
    private
