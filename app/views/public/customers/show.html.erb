@@ -64,17 +64,17 @@
       <% end %>
 
       <div class= "result">
-        <h3 class= "weight-result">
+        <h4 class= "weight-result">
           今までの総重量は<span><%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %></span>kg
-          </h3>
-        <h3 class= "post-result">
+          </h4>
+        <h4 class= "post-result">
            あなたのレベル
            <span><%= @customer.muscle_posts.count.div(10)%></span>
-        </h3>
+        </h>
       </div>
   </div>
   <div class= "customer-post">
-  <h3>過去の投稿</h3>
+  <h4 class = "past-text">過去の投稿</h4>
       <% @muscle_posts.each do |muscle_post| %>
     <div class= "post-list">
       <div class= "post">
