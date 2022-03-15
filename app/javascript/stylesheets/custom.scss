@@ -122,15 +122,16 @@ color:#333333;
   text-align: center;
 }
 
-.customer-edit-child1{
-  padding-left: 150px;
-  margin-bottom: 30px;
+.edit-page{
+  width: 70%;
+  margin:0 auto;
+  padding-top: 20px;
 }
 
+
 .customer-edit-child{
-  padding-left: 150px;
-  margin-bottom: 10px;
 }
+
 .favorite-post{
   width: 70%;
   margin:0 auto;
@@ -262,7 +263,7 @@ color:#333333;
 .result-page{
   width: 70%;
   margin:0 auto;
-  padding: 50px ;
+  padding-top: 20px;
 }
 
 .result-index{
@@ -362,6 +363,9 @@ color:#333333;
   width: 10%;
 }
 
+.not-exist{
+ text-align:center;
+}
 
 @media screen and (max-width:780px) {
   .profile-container{
@@ -402,7 +406,7 @@ color:#333333;
     padding-top: 20px;
   }
   .calendar{
-    font-size: 12px;
+    font-size: 10px;
   }
   .graff{
    padding-top: 50px;
@@ -537,6 +541,13 @@ color:#333333;
   .text-area{
     width: 190px;
     height: 90px;
+  }
+
+  .result-page{
+    width: 100%;
+  }
+
+  .customer-edit-child1{
   }
 
 }
