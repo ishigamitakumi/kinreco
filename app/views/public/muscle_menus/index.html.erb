@@ -1,20 +1,24 @@
-<h2>検索結果</h2>
-<table>
-  <% @muscle_menu.muscle_posts.each do |muscle_post| %>
-  <tr>
-    <td><%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%></td>
-    <td><%= muscle_post.customer.name %></td>
-    <td><%= muscle_post.customer.age %></td>
-    <td><%= muscle_post.customer.sex %></td>
-    <td><%= muscle_post.muscle_menu.name %></td>
-    <td><%= muscle_post.weight%>kgを<%= muscle_post.times %>回</td>
-    <% unless muscle_post.customer == current_customer %>
-    <td><%= render "public/favorites/favorite", muscle_post: muscle_post %></td>
+<div class= "result-page">
+  <h2>検索結果</h2>
+  <table class= "result-index">
+    <% @muscle_menu.muscle_posts.each do |muscle_post| %>
+    <tr>
+      <td><%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%></td>
+      <td><%= muscle_post.customer.name %></td>
+      <td><%= muscle_post.customer.age %></td>
+      <td><%= muscle_post.customer.sex %></td>
+      <td><%= muscle_post.muscle_menu.name %></td>
+      <td><%= muscle_post.weight%>kgを<%= muscle_post.times %>回</td>
+      <% unless muscle_post.customer == current_customer %>
+      <td><%= render "public/favorites/favorite", muscle_post: muscle_post %></td>
+      <% else %>
+      <td>　　</td>
+      <% end %>
+      <td><%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %></td>
+    </tr>
     <% end %>
-    <td><%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %></td>
-  </tr>
-  <% end %>
-</table>
+  </table>
+</div>
 
 
 
