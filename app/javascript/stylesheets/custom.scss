@@ -82,10 +82,10 @@ footer {
   margin:0 auto;
 }
 
-.customers{
+.customers-page{
   width: 70%;/*横幅*/
   margin: 0 auto;/*中央寄せ*/
-  padding: 50px;
+  padding-top: 50px;
 }
 
 .registration-form{
@@ -280,6 +280,45 @@ color:#333333;
   width: 70%;
   margin:0 auto;
 }
+
+.customers-index{
+  width: 60%;
+  margin:0 auto;
+  padding-top: 20px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.customers-item:first-child{
+  width: 10%;
+  padding-bottom: 20px;
+
+}
+
+.customers-item:nth-child(2){
+  width: 10%;
+}
+
+.customers-item:nth-child(3){
+  width: 10%;
+
+}
+.customers-item:nth-child(4){
+  width: 10%;
+
+}
+.customers-item:nth-child(5){
+  width: 20%;
+
+}
+.customers-item:nth-child(6){
+  width: 20%;
+
+}
+.customers-item:last-child{
+  width: 20%;
+}
+
 
 @media screen and (max-width:780px) {
   .profile-container{
