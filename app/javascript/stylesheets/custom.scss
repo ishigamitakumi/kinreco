@@ -319,6 +319,49 @@ color:#333333;
   width: 20%;
 }
 
+.posts-index{
+  width: 60%;
+  margin:0 auto;
+  padding-top: 20px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.posts-item:first-child{
+  width: 10%;
+  padding-bottom: 20px;
+
+}
+
+.posts-item:nth-child(2){
+  width: 10%;
+}
+
+.posts-item:nth-child(3){
+  width: 10%;
+
+}
+.posts-item:nth-child(4){
+  width: 10%;
+
+}
+.posts-item:nth-child(5){
+  width: 20%;
+
+}
+.posts-item:nth-child(6){
+  width: 15%;
+
+}
+.posts-item:nth-child(7){
+  width: 5%;
+
+}
+.p
+.postss-item:last-child{
+  width: 10%;
+}
+
 
 @media screen and (max-width:780px) {
   .profile-container{

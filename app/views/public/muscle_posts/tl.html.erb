@@ -4,22 +4,34 @@
     <div><%= link_to "投稿一覧",muscle_posts_path %></div>
     <div><%= link_to "タイムライン",muscle_posts_tl_path %></div>
   </div>
-    <table class= "index1">
-      <tbody>
-        <% @muscle_posts.each do |muscle_post| %>
-          <tr>
-            <td><%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%></td>
-            <td><%= muscle_post.customer.name %></td>
-            <td><%= muscle_post.customer.age %></td>
-            <td><%= muscle_post.customer.sex %></td>
-            <td><%= muscle_post.muscle_menu.name %></td>
-            <td><%= muscle_post.weight%>kgを<%= muscle_post.times %>回</td>
-            <td><%= render "public/favorites/favorite", muscle_post: muscle_post %></td>
-            <td><%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %></td>
-
-          </tr>
+     <% @muscle_posts.each do |muscle_post| %>
+     <div class= "posts-index">
+       <div class= "posts-item">
+         <%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%>
+       </div>
+       <div class= "posts-item">
+        <%= muscle_post.customer.name %>
+       </div>
+       <div class= "posts-item">
+        <%= muscle_post.customer.age %>
+       </div>
+       <div class= "posts-item">
+        <%= muscle_post.customer.sex %>
+       </div>
+       <div class= "posts-item">
+        <%= muscle_post.muscle_menu.name %>
+       </div>
+       <div class= "posts-item">
+        <%= muscle_post.weight%>kgを<%= muscle_post.times %>回
+       </div>
+       <div class= "posts-item">
+        <%= render "public/favorites/favorite", muscle_post: muscle_post %>
+       </div>
+       <div class= "posts-item">
+        <%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %>
+       </div>
+     </div>
         <% end %>
-      </tbody>
-    </table>
+
 
 </div>
