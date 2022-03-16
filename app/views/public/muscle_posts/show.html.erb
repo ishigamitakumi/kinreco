@@ -1,27 +1,34 @@
-<div class= "post-index">
-  <table class= "index1">
-    <tr>
-      <td>
+<div class="post-detail-page">
+  <div class= "post-detail">
+    <div class= "post-detail-item">
       <%= link_to customer_path(@muscle_post.customer.id) do %>
       <%= @muscle_post.customer.name %>
       <% end %>
       さんの投稿
-      </td>
-      <td><%= @muscle_post.muscle_menu.name %></td>
-      <td><%= @muscle_post.weight %>kgを<%= @muscle_post.times%>回</td>
-      <td style="width: 200px; height: 15px; margin: 0px; padding: 0px;"><textarea style=" margin: 0px; padding: 0px; width: 100%; height: 80%; box-sizing: border-box;"><%= @muscle_post.sentence%></textarea> </td>
-      <td><%= image_tag @muscle_post.get_post_image,size: "120x120" %></td>
-  <% if @muscle_post.customer == current_customer %>
-        <td>体重<%= @muscle_post.body_weight%>kg</td>
-    </tr>
-    </tr>
-      <td><%= link_to "編集",edit_muscle_post_path, class: "btn-circle-flat2" %></td>
-      <td><%= link_to "削除",muscle_post_path, method: :delete, class: "btn-circle-flat3" %></td>
-    </tr>
-  <% else %>
-      <td>
-        <%= render "public/favorites/favorite", muscle_post: @muscle_post %>
-      </td>
-  <% end %>
-  </table>
+    </div>
+    <div class= "post-detail-item">
+      <%= @muscle_post.muscle_menu.name %>
+    </div>
+    <div class= "post-detail-item">
+      <%= @muscle_post.weight %>kgを<%= @muscle_post.times%>回
+    </div>
+    <div class= "post-detail-item"><textarea style=" width: 100%; height: 80%; box-sizing: border-box;"><%= @muscle_post.sentence%></textarea></div>
+
+    <div class= "post-detail-item">
+      <%= image_tag @muscle_post.get_post_image,size: "120x120" %>
+    </div>
+    <% if @muscle_post.customer == current_customer %>
+      <div class= "post-detail-item">
+        体重<%= @muscle_post.body_weight%>kg
+      </div>
+      <div class= "post-detail-item">
+        <%= link_to "編集",edit_muscle_post_path, class: "btn-circle-flat2" %>
+        <%= link_to "削除",muscle_post_path, method: :delete, class: "btn-circle-flat3" %>
+      </div>
+    <% else %>
+    <div class= "post-detail-item">
+      <%= render "public/favorites/favorite", muscle_post: @muscle_post %>
+    </div>
+    <% end %>
+  </div>
 </div>
