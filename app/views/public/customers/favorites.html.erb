@@ -3,7 +3,12 @@
   <% @favorite_posts.each do |post|%>
     <div class= "favorite-post">
       <div class= "favorite-post-item">
-        <%= post.customer.name %>さんの投稿
+        <%= image_tag post.customer.get_profile_image, size: '60x60'%>
+      </div>
+      <div class= "favorite-post-item">
+        <%= link_to customer_path(post.customer.id) do %>
+        <%= post.customer.name %>
+        <% end %>
       </div>
       <div class= "favorite-post-item">
         <%=post.customer.age %>

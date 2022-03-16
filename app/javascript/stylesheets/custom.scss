@@ -70,7 +70,7 @@ footer {
 }
 
 .caution{
- color: #2196F3;
+  color: #2196F3;
 }
 
 .new-post-child{
@@ -105,11 +105,11 @@ footer {
 }
 
 .link-icon2{
-color:#333333;
+  color:#333333;
 }
 
 .sample2{
- color:#FFFFDD;
+   color:#FFFFDD;
 }
 
 .about-page{
@@ -136,13 +136,12 @@ color:#333333;
 }
 
 .favorite-post{
-  
+  width: 60%;
+  margin:0 auto;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
-
-.favorite-post-item{
-  
-}
-
 
 .post-index{
   width: 70%;
@@ -377,41 +376,41 @@ color:#333333;
 }
 
 .not-exist{
- text-align:center;
+   text-align:center;
 }
 
 @media screen and (max-width:780px) {
   .profile-container{
-  width: 100%;
-  margin:0 auto;
-  padding:0;
-  display:flex;
-  flex-direction: column;
+    width: 100%;
+    margin:0 auto;
+    padding:0;
+    display:flex;
+    flex-direction: column;
   }
 
   .profile{
-  width: 100%;
+    width: 100%;
   }
 
   .profile-table{
-  width: 80%;
-  margin:0 auto;
+    width: 80%;
+    margin:0 auto;
   }
 
   .customer-post{
-  width: 80%;
-  margin:0 auto;
-  margin-top: 30px;
+    width: 80%;
+    margin:0 auto;
+    margin-top: 30px;
   }
 
   .weight-result{
-  width: 80%;
-  margin:0 auto;
+    width: 80%;
+    margin:0 auto;
   }
 
   .post-result{
-  width: 80%;
-  margin:0 auto;
+    width: 80%;
+    margin:0 auto;
   }
 
   .calendar-page{
@@ -422,7 +421,7 @@ color:#333333;
     font-size: 10px;
   }
   .graff{
-   padding-top: 50px;
+    padding-top: 50px;
   }
   .header-list{
     display:flex;
@@ -433,15 +432,15 @@ color:#333333;
   }
 
   .post:first-child{
-  width: 45%;
-  padding: 5px;
+    width: 45%;
+    padding: 5px;
   }
-  
+
   .post:nth-child(2){
     width: 40%;
     padding: 5px;
   }
-  
+
   .post:last-child{
     width: 15%;
     padding: 5px;
@@ -465,44 +464,44 @@ color:#333333;
     flex-direction:column
   }
   .customers-index{
-  width: 60%;
-  margin:0 auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
+    width: 60%;
+    margin:0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 
   }
   .customers-item:first-child{
     width: 10%;
     padding-bottom: 20px;
-  
+
   }
-  
+
   .customers-item:nth-child(2){
     width: 100%;
   }
-  
+
   .customers-item:nth-child(3){
     width: 100%;
-  
+
   }
   .customers-item:nth-child(4){
     width: 100%;
-  
+
   }
   .customers-item:nth-child(5){
     width: 100%;
-  
+
   }
   .customers-item:nth-child(6){
     width: 100%;
-  
+
   }
   .customers-item:last-child{
     width: 100%;
   }
-  
+
   .posts-index{
     width: 60%;
     margin:0 auto;
@@ -511,36 +510,36 @@ color:#333333;
     display: flex;
     flex-direction: column;
     }
-  
+
   .posts-item:first-child{
     width: 100%;
     padding-bottom: 20px;
-  
+
   }
-  
+
   .posts-item:nth-child(2){
     width: 100%;
   }
-  
+
   .posts-item:nth-child(3){
     width: 100%;
-  
+
   }
   .posts-item:nth-child(4){
     width: 100%;
-  
+
   }
   .posts-item:nth-child(5){
     width: 100%;
-  
+
   }
   .posts-item:nth-child(6){
     width: 100%;
-  
+
   }
   .posts-item:nth-child(7){
     width: 100%;
-  
+
   }
   .p
   .postss-item:last-child{
@@ -559,23 +558,24 @@ color:#333333;
   .result-page{
     width: 100%;
   }
-
-  .customer-edit-child1{
-  }
-
   .post-detail-page{
-  width: 100%;
-  padding-top: 50px;
+    width: 100%;
+    padding-top: 50px;
   }
 
   .post-detail{
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
 
   .favorite-post-page{
-  width: 100%;
-  padding-top: 20px;
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .favorite-post{
+    display: flex;
+    flex-direction: column;
   }
 
 }
