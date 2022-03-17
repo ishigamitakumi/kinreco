@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2022_03_05_084206) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.integer "age", default: 0
-    t.integer "sex", default: 0
+    t.integer "age"
+    t.integer "sex"
     t.string "introduction_text"
     t.integer "experience_years"
     t.datetime "created_at", precision: 6, null: false
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2022_03_05_084206) do
   create_table "muscle_posts", force: :cascade do |t|
     t.string "customer_id"
     t.string "muscle_menu_id"
-    t.integer "weight"
+    t.string "weight"
     t.integer "times"
     t.integer "body_weight"
     t.string "sentence"
