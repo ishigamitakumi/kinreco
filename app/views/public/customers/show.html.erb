@@ -1,0 +1,112 @@
+<div class = "profile-container">
+  <div class ="profile">
+      <table class= "profile-table">
+        <tr>
+          <td>
+            <%= image_tag @customer.get_profile_image, size: '80x80' %>
+          </td>
+        </tr>
+        <tr>
+          <td>氏名</td>
+          <td><%= @customer.name %></td>
+        </tr>
+        <tr>
+          <td>年齢</td>
+          <td><%= @customer.age %></td>
+        </tr>
+        <tr>
+          <td>性別</td>
+          <td><%= @customer.sex %></td>
+        </tr>
+        <tr>
+          <td>筋トレ歴</td>
+          <td><%= @customer.experience_years %>年</td>
+        </tr>
+        <tr>
+          <td>ひとこと紹介文</td>
+          <td><%= @customer.introduction_text %></td>
+        </tr>
+        <tr>
+          <td>フォロー　<%= link_to "#{@customer.followings.count} ",customer_followings_path(@customer.id)%></td>
+          <td>フォロワー　<%= link_to "#{@customer.followers.count} ", customer_followers_path(@customer.id)%></td>
+        </tr>
+      </table>
+
+      <% if @customer == current_customer %>
+      <table class= "profile-table">
+        <tr>
+          <td>
+            <%= link_to edit_customer_path do %>
+            <i class="fa-solid fa-user-gear link-icon2"></i><span class='sample2'>編集する</span>
+            <% end %>
+          </td>
+          <td>
+            <%=link_to favorites_customer_path(@customer) do %>
+            <i class="fa-solid fa-heart link-icon2"></i><span class='sample2'>いいね一覧</span>
+            <% end %>
+          </td>
+        <tr>
+      </table>
+      <% else %>
+      <table>
+        <tr>
+          <% if current_customer.following?(@customer) %>
+          <td>
+            <%= link_to "フォロー外す", customer_relationships_path(@customer.id), method: :delete,class: "btn-square-little-rich" %>
+          </td>
+          <% else %>
+          <td>
+            <%= link_to "フォローする", customer_relationships_path(@customer.id), method: :post,class: "btn-square-little-rich" %>
+          </td>
+          <% end %>
+        </tr>
+      </table>
+      <% end %>
+
+      <div class= "result">
+        <h4 class= "weight-result">
+          今までの総重量は<span><%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %></span>kg
+          </h4>
+        <h4 class= "post-result">
+           あなたのレベル
+           <span><%= @customer.muscle_posts.count.div(10)%></span>
+        </h>
+      </div>
+  </div>
+  <div class= "customer-post">
+  <h4 class = "past-text">過去の投稿</h4>
+      <% @muscle_posts.each do |muscle_post| %>
+    <div class= "post-list">
+      <div class= "post">
+      <%= muscle_post.muscle_menu.name %>
+      </div>
+      <div class= "post">
+      <%= muscle_post.weight %>kgを<%= muscle_post.times%>回
+      </div>
+      <div class= "post">
+      <%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %>
+      </div>
+    </div>
+      <% end %>
+      <div class="d-flex justify-content-center">
+        <%= paginate @muscle_posts %>
+      </div>
+  </div>
+</div>
+
+<script>
+  $(function(){
+    $('.sample2').mouseover(function(e){
+      $(this).css('color','#333333');
+    });
+    $('.sample2').mouseout(function(e){
+      $(this).css('color','#FFFFDD');
+    });
+    $('.link-icon2').mouseover(function(e){
+      $(this).parent().find('.sample2').css('color','#333333');
+    });
+    $('.link-icon2').mouseout(function(e){
+      $(this).parent().find('.sample2').css('color','#FFFFDD');
+    });
+  });
+</script>

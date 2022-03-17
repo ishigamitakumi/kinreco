@@ -1,0 +1,25 @@
+<div class= "admin-customer">
+  <table>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td>
+            <%= image_tag customer.get_profile_image, size: '80x80' %>
+          </td>
+          <td>
+            <%= link_to admin_customer_path(customer.id) do %>
+            <%= customer.name %>
+            <% end %>
+          </td>
+          <td><%= customer.age %></td>
+          <td><%= customer.sex %></td>
+          <td><%= customer.experience_years %>年</td>
+          <td><%= customer.introduction_text %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    <div class="d-flex justify-content-center">
+      <%= paginate @customers %>
+    </div>
+</div>

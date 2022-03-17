@@ -1,0 +1,33 @@
+<div class= "favorite-post-page">
+  <h3>いいね一覧</h3>
+  <% @favorite_posts.each do |post|%>
+    <div class= "favorite-post">
+      <div class= "favorite-post-item">
+        <%= image_tag post.customer.get_profile_image, size: '60x60'%>
+      </div>
+      <div class= "favorite-post-item">
+        <%= link_to customer_path(post.customer.id) do %>
+        <%= post.customer.name %>
+        <% end %>
+      </div>
+      <div class= "favorite-post-item">
+        <%=post.customer.age %>
+      </div class= "favorite-post-item">
+      <div>
+        <%=post.customer.sex %>
+      </div>
+      <div class= "favorite-post-item">
+        <%= post.muscle_menu.name %>
+      </div>
+      <div class= "favorite-post-item">
+        <%= post.weight%>kgを<%= post.times %>回
+      </div>
+      <div class= "favorite-post-item">
+        <%= link_to "詳細",muscle_post_path(post.id), class: "btn-circle-flat" %>
+      </div>
+    </div>
+  <% end %>
+    <div class="d-flex justify-content-center">
+     <%= paginate @favorite_posts %>
+    </div>
+</div>

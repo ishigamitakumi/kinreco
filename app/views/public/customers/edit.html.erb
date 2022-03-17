@@ -1,0 +1,39 @@
+<div class = "edit-page">
+    <div class = "customer-edit-child">
+      <h2>ユーザー編集</h2>
+    </div>
+  <%= form_with model: @customer,url: customer_path(@customer.id), local:true do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+    <div class = "customer-edit-child">
+      <%= f.label :image %>
+      <%= f.file_field :profile_image, accept: 'image/*' %>
+    </div>
+    <div class = "customer-edit-child">
+      <%= f.label :name, "氏名" %>&emsp;&emsp;
+      <%= f.text_field :name, placeholder: "氏名" %>
+    </div>
+    <div class = "customer-edit-child">
+      <%= f.label :email, "E-mail" %>&emsp;
+      <%= f.text_field :email %>
+    </div>
+    <div class = "customer-edit-child">
+      <%= f.label :age, "年齢" %>&emsp;&emsp;
+      <%= f.select :age, Customer.ages.keys %>
+    </div>
+    <div class = "customer-edit-child">
+      <%= f.label :sex, "性別" %>&emsp;&emsp;
+      <%= f.select :sex, Customer.sexes.keys %>
+    </div>
+    <div class = "customer-edit-child">
+      <%= f.label :experience_years, "筋トレ歴" %>
+      <%= f.text_field :experience_years,placeholder: "半角数字",size: "4×2" %>年
+    </div>
+    <div class = "customer-edit-child">
+      <%= f.label :introduction_text, "ひとこと紹介文"%></br>
+      <%= f.text_area :introduction_text,placeholder: "20文字以内",maxlength: "20" %>
+    </div>
+    <div class = "customer-edit-child">
+      <%= f.submit "編集内容を保存する" %>
+    </div>
+  <% end %>
+</div>

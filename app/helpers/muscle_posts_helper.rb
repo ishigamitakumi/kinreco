@@ -1,0 +1,2 @@
+module MusclePostsHelper
+end

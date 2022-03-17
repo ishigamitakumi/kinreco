@@ -1,0 +1,57 @@
+<div class= "registration-form">
+  <h2>Sign up</h2>
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "public/shared/error_messages", resource: resource %>
+  
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label "パスワード" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 文字)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label "パスワード確認用" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+  
+    <div class="field">
+        <%= f.label :name, "名前" %><br />
+        <%= f.text_field :name %>
+      </div>
+  
+    <div class="field">
+      <%= f.label :introduction_text, "ひとこと紹介文" %><br />
+      <%= f.text_field :introduction_text,maxlength: "20",placeholder: "20文字以内" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :experience_years, "筋トレ歴" %><br />
+      <%= f.text_field :experience_years, placeholder: "半角数字",size: "4×2" %>年
+    </div>
+  
+    <div>
+      <%= f.label :age, "年齢"%></br>
+      <%= f.select :age, Customer.ages.keys %>
+    </div>
+  
+    <div>
+      <%= f.label :sex, "性別"%></br>
+      <%= f.select :sex, Customer.sexes.keys %>
+    </div>
+    <p></p>
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  
+  <% end %>
+  
+  <%= render "public/shared/links" %>
+</div>

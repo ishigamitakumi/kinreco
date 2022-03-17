@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      muscle_post: 投稿
+      customer: 会員
+    attributes:
+      muscle_post:
+        muscle_menu: 筋トレメニュー
+        weight: 重量
+        times: 回数
+        body_weight: 体重
+        sentence: 文章
+      customer:
+        name: 名前
+        age: 年齢
+        sex: 性別
+        introduction_text: 紹介文
+        experience_years: 筋トレ歴

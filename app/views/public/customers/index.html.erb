@@ -1,0 +1,41 @@
+<div class= "customers-page">
+  <div class= "index-link">
+    <div><%= link_to "ユーザー一覧",customers_path %></div>
+    <div><%= link_to "投稿一覧",muscle_posts_path %></div>
+    <div><%= link_to "タイムライン", muscle_posts_tl_path %></div>
+  </div>
+    <% @customers.each do |customer| %>
+      <div class= "customers-index">
+        <div class= "customers-item">
+        <%= image_tag customer.get_profile_image, size: '60x60' %>
+        </div>
+        <div class= "customers-item">
+          <%= link_to customer_path(customer.id) do %>
+          <%= customer.name %>
+          <% end %>
+        </div>
+        <div class= "customers-item">
+          <%= customer.age %>
+        </div>
+        <div class= "customers-item">
+          <%= customer.sex %>
+        </div>
+        <div class= "customers-item">
+          筋トレ歴<%= customer.experience_years %>年
+        </div>
+        <div class= "customers-item">
+          <%= customer.introduction_text %>
+        </div>
+        <div class= "customers-item">
+          <% if current_customer.following?(customer) %>
+            <%= link_to "フォロー外す", customer_relationships_path(customer.id), method: :delete,class: "btn-square-little-rich" %>
+          <% else %>
+            <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post,class: "btn-square-little-rich" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <div class="d-flex justify-content-center">
+    <%= paginate @customers %>
+  </div>
+</div>
