@@ -9,7 +9,7 @@ class Public::MusclePostsController < ApplicationController
     @muscle_post = MusclePost.new(muscle_post_params)
     @muscle_post.customer = current_customer
     if @muscle_post.save
-      redirect_to muscle_post_path(@muscle_post.id)
+      redirect_to customer_path(@muscle_post.customer.id)
     else
      render "new"
     end
@@ -52,7 +52,7 @@ class Public::MusclePostsController < ApplicationController
       end
     end
     muscle_post_ids = muscle_post_ids.sort_by{|x| x}
-    @muscle_posts = MusclePost.find(muscle_post_ids).last(10)
+    @muscle_posts = MusclePost.where(id: muscle_post_ids).page(params[:page]).per(10)
   end
 
    private

@@ -34,7 +34,7 @@ resources :muscle_menus, only: [:index]
 end
 
 namespace :admin do
-resources :customers, only: [:show,:index]
+resources :customers, only: [:show,:index,:destroy]
 resources :muscle_menus, only: [:index,:create,:edit,:update,:destroy]
 end
 end

@@ -292,6 +292,13 @@ footer {
 .admin-menu{
   width: 70%;
   margin:0 auto;
+  padding-top: 20px;
+}
+
+.admin-menu-edit-page{
+  width: 70%;
+  margin:0 auto;
+  padding-top: 20px;
 }
 
 .customers-index{
@@ -377,6 +384,12 @@ footer {
 
 .not-exist{
    text-align:center;
+}
+
+.admin-customer-page{
+  width: 70%;
+  margin:0 auto;
+  padding-top: 20px;
 }
 
 @media screen and (max-width:780px) {
