@@ -1,35 +1,38 @@
-<table>
-    <tr>
-      <td>
-      <%= image_tag @customer.get_profile_image, size: '80x80' %>
-      </td>
-    </tr>
-    <tr>
-      <td >氏名</td>
-      <td><%= @customer.name %></td>
-    </tr>
-    <tr>
-      <td>年齢</td>
-      <td><%= @customer.age %></td>
-    </tr>
-    <tr>
-      <td>性別</td>
-      <td><%= @customer.sex %></td>
-    </tr>
-    <tr>
-      <td>筋トレ歴</td>
-      <td><%= @customer.experience_years %>年</td>
-    </tr>
-    <tr>
-      <td>ひとこと紹介文</td>
-      <td><%= @customer.introduction_text %></td>
-    </tr>
-  </table>
-
+<div class=admin-customer-page>
   <table>
- 
-    <tr>
-      <th>他のユーザー</th>
-      <td><%= link_to '一覧を見る',admin_customers_path %></td>
-    </tr>
-  </table>
+      <tr>
+        <td>
+        <%= image_tag @customer.get_profile_image, size: '80x80' %>
+        </td>
+      </tr>
+      <tr>
+        <td >氏名</td>
+        <td><%= @customer.name %></td>
+      </tr>
+      <tr>
+        <td>年齢</td>
+        <td><%= @customer.age %></td>
+      </tr>
+      <tr>
+        <td>性別</td>
+        <td><%= @customer.sex %></td>
+      </tr>
+      <tr>
+        <td>筋トレ歴</td>
+        <td><%= @customer.experience_years %>年</td>
+      </tr>
+      <tr>
+        <td>ひとこと紹介文</td>
+        <td><%= @customer.introduction_text %></td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td><%= link_to "ユーザー一覧を見る",admin_customers_path %></td>
+      </tr>
+      <tr>
+        <td><%= link_to "削除",admin_customer_path(@customer), method: :delete %></td>
+      </tr>
+    </table>
+</div>
