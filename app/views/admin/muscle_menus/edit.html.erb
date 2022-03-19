@@ -1,5 +1,9 @@
-<%= form_with model: @muscle_menu,url: admin_muscle_menu_path, method: :patch do |f| %>
-<%= f.label :メニュー名 %>
-<%= f.text_field :name %>
-<%= f.submit "変更を保存"%>
-<% end %>
+<div class="admin-menu-edit-page">
+  <%= form_with model: @muscle_menu,url: admin_muscle_menu_path, method: :patch do |f| %>
+  <%= f.label :メニュー名 %>
+  <%= f.text_field :name %>
+  <%= f.submit "変更を保存"%>
+  <% end %>
+
+</div>
+

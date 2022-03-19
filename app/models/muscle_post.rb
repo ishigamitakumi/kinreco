@@ -6,7 +6,7 @@ class MusclePost < ApplicationRecord
 
   validates :sentence,length: {maximum: 100}, presence: true
   validates :weight,numericality: { only_integer: true }, presence: true
-  validates :body_weight,numericality: { only_integer: true }, presence: true
+  validates :body_weight,numericality: true, presence: true
   validates :times,numericality: { only_integer: true }, presence: true
 
   def favorited_by?(customer)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_084206) do
+ActiveRecord::Schema.define(version: 2022_03_19_105139) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2022_03_05_084206) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.integer "age"
-    t.integer "sex"
+    t.integer "age", default: 0
+    t.integer "sex", default: 0
     t.string "introduction_text"
     t.integer "experience_years"
     t.datetime "created_at", precision: 6, null: false
@@ -85,9 +85,9 @@ ActiveRecord::Schema.define(version: 2022_03_05_084206) do
   create_table "muscle_posts", force: :cascade do |t|
     t.string "customer_id"
     t.string "muscle_menu_id"
-    t.string "weight"
+    t.integer "weight"
     t.integer "times"
-    t.integer "body_weight"
+    t.float "body_weight"
     t.string "sentence"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
