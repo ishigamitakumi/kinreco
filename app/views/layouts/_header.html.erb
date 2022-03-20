@@ -24,28 +24,28 @@
             <% if customer_signed_in? %>
             <li>
               <%= link_to customer_path(current_customer) do %>
-              <i class="fa-solid fa-user link-icon"></i><span class='sample'>マイページ</span>
+              <i class="fas fa-user link-icon"></i><span class='sample'>マイページ</span>
               <% end %>
             </li>
             <li>
               <%= link_to customers_calendar_path do %>
-              <i class="fa-solid fa-calendar link-icon"></i><span class='sample'>カレンダー</span>
+              <i class="fas fa-calendar link-icon"></i><span class='sample'>カレンダー</span>
               <% end %>
 
             </li>
             <li>
               <%= link_to new_muscle_post_path do  %>
-              <i class="fa-solid fa-pen link-icon"></i><span class='sample'>投稿する</span>
+              <i class="fas fa-pen link-icon"></i><span class='sample'>投稿する</span>
               <% end %>
             </li>
             <li>
               <%= link_to muscle_posts_path do %>
-              <i class="fa-solid fa-users link-icon"></i><span class='sample'>他のユーザー</span>
+              <i class="fas fa-users link-icon"></i><span class='sample'>他のユーザー</span>
               <% end %>
             </li>
             <li>
               <%= link_to destroy_customer_session_path, method: :delete do %>
-              <i class="fa-solid fa-right-from-bracket link-icon"></i><span class='sample'>ログアウト</span>
+              <i class="fas fa-sign-out-alt link-icon"></i><span class='sample'>ログアウト</span>
               <% end %>
             </li>
             <% else %>
