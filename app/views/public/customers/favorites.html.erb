@@ -3,6 +3,9 @@
   <% @favorite_posts.each do |post|%>
     <div class= "favorite-post">
       <div class= "favorite-post-item">
+        <%= post.created_at.strftime("%m/%d") %>
+      </div>
+      <div class= "favorite-post-item">
         <%= image_tag post.customer.get_profile_image, size: '60x60'%>
       </div>
       <div class= "favorite-post-item">
@@ -12,8 +15,8 @@
       </div>
       <div class= "favorite-post-item">
         <%=post.customer.age %>
-      </div class= "favorite-post-item">
-      <div>
+      </div>
+      <div class= "favorite-post-item">
         <%=post.customer.sex %>
       </div>
       <div class= "favorite-post-item">
@@ -23,7 +26,7 @@
         <%= post.weight%>kgを<%= post.times %>回
       </div>
       <div class= "favorite-post-item">
-        <%= link_to "詳細",muscle_post_path(post.id), class: "btn-circle-flat" %>
+        <%= link_to "詳細",muscle_post_path(post.id), class: "btn-circle-flat1" %>
       </div>
     </div>
   <% end %>
