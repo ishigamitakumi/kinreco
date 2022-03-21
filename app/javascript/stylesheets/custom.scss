@@ -108,7 +108,6 @@ footer {
 .sessions-form{
   width: 70%;
   margin:0 auto;
-  padding: 50px ;
 }
 
 .sample{
@@ -324,10 +323,10 @@ footer {
   margin:0 auto;
 }
 
-.admin-customer{
+.admin-customers-page{
   width: 70%;
   margin:0 auto;
-  padding: 50px ;
+  padding-top: 20px;
 }
 .admin-menu{
   width: 70%;
@@ -758,6 +757,13 @@ footer {
   }
   .favorite-post-item:last-child{
   width: 100%;
+  }
+  
+  .admin-customers-page{
+  width: 90%;
+  margin:0 auto;
+  padding-top: 20px;
+    
   }
 
 }
