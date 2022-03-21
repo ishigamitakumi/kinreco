@@ -102,12 +102,14 @@ footer {
 .registration-form{
   width: 70%;
   margin:0 auto;
-  padding: 50px ;
+  padding: 20px ;
 }
 
 .sessions-form{
   width: 70%;
   margin:0 auto;
+  padding-top: 20px;
+  padding-left: 40px;
 }
 
 .sample{
@@ -133,9 +135,11 @@ footer {
 }
 
 .edit-page{
-  width: 70%;
-  margin:0 auto;
-  padding-top: 20px;
+  width: 70%;/*横幅*/
+  margin: 0 auto;/*中央寄せ*/
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -543,6 +547,15 @@ footer {
     width: 100%;
     padding-top: 20px;
   }
+  
+  .edit-page{
+    width: 70%;/*横幅*/
+    margin: 0 auto;/*中央寄せ*/
+    padding: 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
   .calendar{
     font-size: 10px;
   }
@@ -758,12 +771,12 @@ footer {
   .favorite-post-item:last-child{
   width: 100%;
   }
-  
+
   .admin-customers-page{
   width: 90%;
   margin:0 auto;
   padding-top: 20px;
-    
+
   }
 
 }
