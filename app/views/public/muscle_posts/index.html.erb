@@ -1,46 +1,54 @@
-<div class= "post-index">
-  <div class= "index-link">
-    <div><%= link_to "ユーザー一覧",customers_path %></div>
-    <div><%= link_to "投稿一覧",muscle_posts_path %></div>
-    <div><%= link_to "タイムライン",muscle_posts_tl_path %></div>
-  </div>
-    <% @muscle_posts.each do |muscle_post| %>
-      <div class= "posts-index">
-        <div class= "posts-item">
-          <%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%>
-        </div>
-        <div class= "posts-item">
+<div class= "post-index-page">
+  <div class= "post-index">
+    <div class= "index-link">
+      <div><%= link_to "ユーザー一覧",customers_path %></div>
+      <div><%= link_to "投稿一覧",muscle_posts_path %></div>
+      <div><%= link_to "タイムライン",muscle_posts_tl_path %></div>
+    </div>
+      <% @muscle_posts.each do |muscle_post| %>
+        <div class= "posts-index">
+          <div class= "posts-item">
+            <%= muscle_post.created_at.strftime("%m/%d") %>
+          </div>
+          <div class= "posts-item">
+            <%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%>
+          </div>
+          <div class= "posts-item">
+          <%= link_to customer_path(muscle_post.customer_id) do %>
           <%= muscle_post.customer.name %>
-        </div>
-        <div class= "posts-item">
-          <%= muscle_post.customer.age %>
-        </div>
-        <div class= "posts-item">
-          <%= muscle_post.customer.sex %>
-        </div>
-        <div class= "posts-item">
-          <%= muscle_post.muscle_menu.name %>
-        </div>
-        <div class= "posts-item">
-          <%= muscle_post.weight%>kgを<%= muscle_post.times %>回
-        </div>
-        <div class= "posts-item">
-          <% unless @customer == current_customer %>
-          <%= render "public/favorites/favorite", muscle_post: muscle_post %>
           <% end %>
+          </div>
+          <div class= "posts-item">
+            <%= muscle_post.customer.age %>
+          </div>
+          <div class= "posts-item">
+            <%= muscle_post.customer.sex %>
+          </div>
+          <div class= "posts-item">
+            <%= muscle_post.muscle_menu.name %>
+          </div>
+          <div class= "posts-item">
+            <%= muscle_post.weight%>kgを<%= muscle_post.times %>回
+          </div>
+          <div class= "posts-item">
+            <% unless @customer == current_customer %>
+            <%= render "public/favorites/favorite", muscle_post: muscle_post %>
+            <% end %>
+          </div>
+          <div class= "posts--item">
+          <%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat1" %>
+          </div>
         </div>
-        <div class= "posts--item">
-        <%= link_to "詳細",muscle_post_path(muscle_post.id), class: "btn-circle-flat" %>
+        <% end %>
+        <div class="d-flex justify-content-center">
+          <%= paginate @muscle_posts %>
         </div>
-      </div>
-      <% end %>
-      <div class="d-flex justify-content-center">
-        <%= paginate @muscle_posts %>
-      </div>
-        <pre>　　　　</pre>
-      <div class="d-flex justify-content-center">
-        <%= render "public/muscle_menus/search" %>
-        <pre>　　　　</pre>
-        <%= render "public/customers/search" %>
-      </div>
+          <pre>　　　　</pre>
+        <div class="d-flex justify-content-center">
+          <%= render "public/muscle_menus/search" %>
+          <pre>　　　　</pre>
+          <%= render "public/customers/search" %>
+        </div>
+  </div>
 </div>
+

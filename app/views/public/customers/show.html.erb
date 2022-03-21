@@ -30,10 +30,7 @@
           <td>フォロー　<%= link_to "#{@customer.followings.count} ",customer_followings_path(@customer.id)%></td>
           <td>フォロワー　<%= link_to "#{@customer.followers.count} ", customer_followers_path(@customer.id)%></td>
         </tr>
-      </table>
-
       <% if @customer == current_customer %>
-      <table class= "profile-table">
         <tr>
           <td>
             <%= link_to edit_customer_path do %>
@@ -46,9 +43,7 @@
             <% end %>
           </td>
         <tr>
-      </table>
       <% else %>
-      <table>
         <tr>
           <% if current_customer.following?(@customer) %>
           <td>
@@ -60,8 +55,8 @@
           </td>
           <% end %>
         </tr>
-      </table>
       <% end %>
+      </table>
 
       <div class= "result">
         <h4 class= "weight-result">
@@ -72,11 +67,15 @@
            <span><%= @customer.muscle_posts.count.div(10)%></span>
         </h>
       </div>
+
   </div>
   <div class= "customer-post">
-  <h4 class = "past-text">過去の投稿</h4>
+  <h4 class = "post-text">過去の投稿</h4>
       <% @muscle_posts.each do |muscle_post| %>
     <div class= "post-list">
+      <div class= "post">
+      <%= muscle_post.created_at.strftime("%m/%d") %>
+      </div>
       <div class= "post">
       <%= muscle_post.muscle_menu.name %>
       </div>

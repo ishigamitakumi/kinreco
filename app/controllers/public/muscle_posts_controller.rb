@@ -20,7 +20,7 @@ class Public::MusclePostsController < ApplicationController
   end
 
   def index
-    @muscle_posts = MusclePost.where.not(id: current_customer.muscle_posts.ids).page(params[:page]).per(7) #他のユーザーの投稿だけを取得する
+    @muscle_posts = MusclePost.where.not(id: current_customer.muscle_posts.ids).page(params[:page]).per(10).order("id DESC") #他のユーザーの投稿だけを取得する
   end
 
   def edit
@@ -52,7 +52,7 @@ class Public::MusclePostsController < ApplicationController
       end
     end
     muscle_post_ids = muscle_post_ids.sort_by{|x| x}
-    @muscle_posts = MusclePost.where(id: muscle_post_ids).page(params[:page]).per(10)
+    @muscle_posts = MusclePost.where(id: muscle_post_ids).page(params[:page]).per(10).order("id DESC")
   end
 
    private
