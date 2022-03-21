@@ -44,7 +44,6 @@ footer {
 .post-list{
   padding: 0.5em 1em;
   margin: 2em 0;
-  color: #5d627b;
   background: white;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
   border: solid 1px #6091d3;/*線*/
@@ -148,9 +147,16 @@ footer {
 }
 
 .favorite-post{
-  width: 60%;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: white;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border: solid 1px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  width: 70%;
   margin:0 auto;
-  padding-top: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -338,7 +344,6 @@ footer {
 .customers-index{
   padding: 0.5em 1em;
   margin: 2em 0;
-  color: #5d627b;
   background: white;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
   border: solid 1px #6091d3;/*線*/
@@ -390,7 +395,6 @@ footer {
 .posts-index{
   padding: 0.5em 1em;
   margin: 2em 0;
-  color: #5d627b;
   background: white;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
   border: solid 1px #6091d3;/*線*/
@@ -464,6 +468,43 @@ footer {
   margin:0 auto;
   padding-top: 20px;
 }
+
+.favorite-post-item:first-child{
+  width: 7%;
+  padding-top: 20px;
+}
+
+.favorite-post-item:nth-child(2){
+  width: 14%;
+  padding-bottom: 20px;
+}
+
+.favorite-post-item:nth-child(3){
+  width: 9%;
+  padding-top: 20px;
+}
+.favorite-post-item:nth-child(4){
+  width: 8%;
+  padding-top: 20px;
+}
+.favorite-post-item:nth-child(5){
+  width: 8%;
+  padding-top: 20px;
+
+}
+.favorite-post-item:nth-child(6){
+  width: 19%;
+  padding-top: 20px;
+}
+.favorite-post-item:nth-child(7){
+  width: 19%;
+  padding-top: 20px;
+}
+.favorite-post-item:last-child{
+  width: 14%;
+}
+
+
 
 @media screen and (max-width:780px) {
   .profile-container{
@@ -677,6 +718,46 @@ footer {
   .favorite-post{
     display: flex;
     flex-direction: column;
+  }
+
+  .search-form{
+    margin-left: 20px;
+  }
+
+  .favorite-post-item:first-child{
+  width: 100%;
+  padding-bottom: 20px;
+
+  }
+
+  .favorite-post-item:nth-child(2){
+  width: 100%;
+
+  }
+
+  .favorite-post-item:nth-child(3){
+  width: 100%;
+
+  }
+  .favorite-post-item:nth-child(4){
+  width: 100%;
+
+  }
+  .favorite-post-item:nth-child(5){
+  width: 100%;
+
+
+  }
+  .favorite-post-item:nth-child(6){
+  width: 100%;
+
+  }
+  .favorite-post-item:nth-child(7){
+  width: 100%;
+
+  }
+  .favorite-post-item:last-child{
+  width: 100%;
   }
 
 }
