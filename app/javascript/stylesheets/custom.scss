@@ -54,17 +54,17 @@ footer {
 
 .post:first-child{
   width: 10%;
-  padding: 10px;
+  padding-top: 13px;
 }
 
 .post:nth-child(2){
   width: 30%;
-  padding: 10px;
+  padding-top: 13px;
 }
 
 .post:nth-child(3){
   width: 20%;
-  padding: 10px;
+  padding-top: 13px;
 }
 
 .post:last-child{
@@ -102,13 +102,14 @@ footer {
 .registration-form{
   width: 70%;
   margin:0 auto;
-  padding: 50px ;
+  padding: 20px ;
 }
 
 .sessions-form{
   width: 70%;
   margin:0 auto;
-  padding: 50px ;
+  padding-top: 20px;
+  padding-left: 40px;
 }
 
 .sample{
@@ -134,9 +135,11 @@ footer {
 }
 
 .edit-page{
-  width: 70%;
-  margin:0 auto;
-  padding-top: 20px;
+  width: 70%;/*横幅*/
+  margin: 0 auto;/*中央寄せ*/
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -168,13 +171,19 @@ footer {
 }
 
 .post-detail-page{
-  width: 70%;
+  width: 80%;
   margin:0 auto;
   padding-top: 50px;
 }
 
 .post-detail{
-  width: 70%;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: white;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border: solid 1px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  width: 80%;
   margin:0 auto;
   display: flex;
   justify-content: space-between;
@@ -204,11 +213,7 @@ footer {
   border-spacing: 15px;
 }
 
-.follow-table{
-  border-collapse: separate;
-  border-spacing: 15px;
-  margin:0 auto;
-}
+
 
 .btn-circle-flat {
   display: inline-block;
@@ -324,10 +329,10 @@ footer {
   margin:0 auto;
 }
 
-.admin-customer{
+.admin-customers-page{
   width: 70%;
   margin:0 auto;
-  padding: 50px ;
+  padding-top: 20px;
 }
 .admin-menu{
   width: 70%;
@@ -504,6 +509,70 @@ footer {
   width: 14%;
 }
 
+.post-detail-item:first-child{
+  width: 15%;
+  padding-top: 40px;
+
+}
+
+.post-detail-item:nth-child(2){
+  width: 15%;
+  padding-top: 40px;
+}
+
+.post-detail-item:nth-child(3){
+  width: 10%;
+  padding-top: 40px;
+
+}
+.post-detail-item:nth-child(4){
+  width: 25%;
+  padding-top: 20px;
+
+}
+.post-detail-item:nth-child(5){
+  width: 15%;
+  padding-left: 20px;
+}
+.post-detail-item:nth-child(6){
+  width: 10%;
+  padding-top: 40px;
+}
+.post-detail-item:last-child{
+  width: 10%;
+  padding-top: 40px;
+}
+
+.follow-page{
+  width: 40%;/*横幅*/
+  margin: 0 auto;/*中央寄せ*/
+  padding-top: 20px;
+
+}
+.follow-index{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: white;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border: solid 1px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  width: 60%;
+  margin:0 auto;
+  margin-bottom: 20px;
+  display:flex;
+  justify-content: space-between;
+
+}
+.follow-item:first-child{
+
+}
+.follow-item:nth-child(2){
+  padding-top: 15px;
+}
+
+.follow-item:last-child{
+  padding-top: 15px;
+}
 
 
 @media screen and (max-width:780px) {
@@ -544,6 +613,15 @@ footer {
     width: 100%;
     padding-top: 20px;
   }
+
+  .edit-page{
+    width: 70%;/*横幅*/
+    margin: 0 auto;/*中央寄せ*/
+    padding: 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
   .calendar{
     font-size: 10px;
   }
@@ -560,22 +638,21 @@ footer {
 
   .post:first-child{
     width: 20%;
-    padding: 5px;
+    padding-top: 13px;
   }
 
   .post:nth-child(2){
     width: 40%;
-    padding: 5px;
+    padding-top: 13px;
   }
 
    .post:nth-child(3){
     width: 25%;
-    padding: 5px;
+    padding-top: 13px;
   }
 
   .post:last-child{
     width: 15%;
-    padding: 5px;
   }
   .new-post{
     width: 100%;
@@ -759,5 +836,64 @@ footer {
   .favorite-post-item:last-child{
   width: 100%;
   }
+
+  .admin-customers-page{
+  width: 90%;
+  margin:0 auto;
+  padding-top: 20px;
+
+  }
+
+  .post-detail-item:first-child{
+  width: 100%;
+  padding-top: 20px;
+}
+
+.post-detail-item:nth-child(2){
+  width: 100%;
+  padding-top: 20px;
+}
+
+.post-detail-item:nth-child(3){
+  width: 100%;
+  padding-top: 20px;
+}
+.post-detail-item:nth-child(4){
+  width: 100%;
+  height: 110px;
+  padding-top: 20px;
+}
+.post-detail-item:nth-child(5){
+  width: 100%;
+  padding-top: 0;
+  padding-left: 0;
+}
+.post-detail-item:nth-child(6){
+  width: 100%;
+  padding-top: 20px;
+}
+.post-detail-item:last-child{
+  width: 100%;
+}
+
+.follow-page{
+  width: 95%;/*横幅*/
+  margin: 0 auto;/*中央寄せ*/
+  padding-top: 20px;
+
+}
+.follow-index{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: white;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border: solid 1px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  width: 100%;
+  margin-bottom: 20px;
+  display:flex;
+  justify-content: space-between;
+
+}
 
 }

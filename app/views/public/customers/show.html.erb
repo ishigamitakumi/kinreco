@@ -63,7 +63,7 @@
           今までの総重量は<span><%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %></span>kg
           </h4>
         <h4 class= "post-result">
-           あなたのレベル
+           レベル
            <span><%= @customer.muscle_posts.count.div(10)%></span>
         </h>
       </div>

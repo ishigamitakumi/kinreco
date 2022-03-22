@@ -25,15 +25,16 @@ class Public::CustomersController < ApplicationController
 
   def favorites
     @customer = Customer.find(params[:id])
-#    favorites= Favorite.where(customer_id: @customer.id).pluck(:muscle_post_id)
-#    @favorite_posts = MusclePost.find(favorites).page(params[:page]).per(10)
+    # favorites= Favorite.where(customer_id: @customer.id).pluck(:muscle_post_id)
+    # @favorite_posts = MusclePost.find(favorites).page(params[:page]).per(10)
     @favorite_posts = MusclePost.joins(:favorites).where(favorites:{customer_id: @customer.id}).page(params[:page]).per(10)
     #findメソッドにpageが効かないので変更
   end
 
   def result
-     @customers = Customer.where(age: params[:age],sex: params[:sex])
-     @customer = current_customer
+    # @customers = Customer.where(age: params[:age],sex: params[:sex])
+    @muscle_posts = MusclePost.includes(:customer).where(customers: {age: params[:age],sex: params[:sex]}).page(params[:page]).per(10)
+    @customer = current_customer
   end
 
   private

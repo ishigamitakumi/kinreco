@@ -1,4 +1,4 @@
-<div class= "admin-customer">
+<div class= "admin-customers-page">
   <table>
     <tbody>
       <% @customers.each do |customer| %>
@@ -14,7 +14,6 @@
           <td><%= customer.age %></td>
           <td><%= customer.sex %></td>
           <td><%= customer.experience_years %>年</td>
-          <td><%= customer.introduction_text %></td>
         </tr>
       <% end %>
     </tbody>

@@ -1,7 +1,7 @@
 <div class= "result-page">
   <% if @muscle_menu.muscle_posts.exists? %>
     <h3>検索結果</h3>
-      <% @muscle_menu.muscle_posts.each do |muscle_post| %>
+      <% @muscle_posts.each do |muscle_post| %>
         <div class= "posts-index">
           <div class= "posts-item">
             <%= muscle_post.created_at.strftime("%m/%d") %>
@@ -39,6 +39,9 @@
   <% else %>
   <h3 class= "not-exist">ヒットしませんでした</h3>
 <% end %>
+  <div class="d-flex justify-content-center">
+    <%= paginate @muscle_posts %>
+  </div>
 </div>
 
 
