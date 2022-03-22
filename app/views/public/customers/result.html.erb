@@ -1,8 +1,7 @@
 <div class= "result-page">
-  <% if @customers.exists? %>
+  <% if @muscle_posts.exists? %>
   <h3>検索結果</h3>
-    <% @customers.each do |customer| %>
-      <% customer.muscle_posts.each do |muscle_post| %>
+      <% @muscle_posts.each do |muscle_post| %>
         <div class= "posts-index">
           <div class= "posts-item">
             <%= muscle_post.created_at.strftime("%m/%d") %>
@@ -11,7 +10,7 @@
             <%= image_tag muscle_post.customer.get_profile_image, size: '60x60'%>
           </div>
           <div class= "posts-item">
-          <%= link_to customer_path(customer.id) do %>
+          <%= link_to customer_path(muscle_post.customer.id) do %>
           <%= muscle_post.customer.name %>
           <% end %>
           </div>
@@ -39,10 +38,9 @@
           </div>
         </div>
       <% end %>
-    <% end %>
-    <!--<div class="d-flex justify-content-center">-->
-    <!--  <= paginate @muscle_posts %>-->
-    <!--</div>-->
+        <div class="d-flex justify-content-center">
+          <%= paginate @muscle_posts %>
+        </div>
   <% else %>
     <h3 class= "not-exist">ヒットしませんでした</h3>
   <% end %>
