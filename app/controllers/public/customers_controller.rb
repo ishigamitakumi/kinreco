@@ -32,7 +32,7 @@ class Public::CustomersController < ApplicationController
   end
 
   def result
-     @customers = Customer.where(age: params[:age],sex: params[:sex])
+     @customers = Customer.where(age: params[:age],sex: params[:sex]).page(params[:page]).per(10)
      @customer = current_customer
   end
 
