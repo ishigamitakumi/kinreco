@@ -1,22 +1,22 @@
-<div class= "customers">
+<div class= "follow-page">
   <h3>フォロー</h3>
   <% if @customers.exists? %>
-  <table class= "follow-table">
-      <% @customers.each do |customer| %>
-        <tr>
-          <td><%= image_tag customer.get_profile_image, size: '60x60'%></td>
-          <td>
-            <%= link_to customer_path(customer.id) do %>
-            <%= customer.name %>
-            <% end %>
-          </td>
-          <td>フォロー数：<%= link_to "#{customer.followings.count} ",customer_followings_path(customer.id)  %></td>
-          <td>フォロワー数：<%= link_to "#{customer.followers.count} ", customer_followers_path(customer.id)  %></td>
-        </tr>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <% @customers.each do |customer| %>
+    <div class= "follow-index">
+      <div class= "follow-item">
+        <%= image_tag customer.get_profile_image, size: '60x60'%>
+      </div>
+      <div class= "follow-item">
+        <%= link_to customer_path(customer.id) do %>
+        <%= customer.name %>
+        <% end %>
+      </div>
+      <div class= "follow-item">
+        フォロー数：<%= link_to "#{customer.followings.count} ",customer_followings_path(customer.id)  %>
+        フォロワー数：<%= link_to "#{customer.followers.count} ", customer_followers_path(customer.id)  %>
+      </div>
+    </div>
+    <% end %>
   <% else %>
     <p>ユーザーはいません</p>
   <% end %>
