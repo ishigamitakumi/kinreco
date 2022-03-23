@@ -35,7 +35,14 @@ footer {
 }
 
 .profile{
-  width: 50%;
+  width: 30%;
+  padding-right: 100px;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background-color: #333333;;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border: solid 4px #FFCC66;/*線*/
+  border-radius: 10px;/*角の丸み*/
 }
 .customer-post{
   width: 50%;
@@ -123,17 +130,6 @@ footer {
 .sample2{
    color:#FFFFDD;
 }
-
-.about-page{
-  width: 70%;
-  margin:0 auto;
-  padding: 50px ;
-}
-
-.wellcome{
-  text-align: center;
-}
-
 .edit-page{
   width: 70%;/*横幅*/
   margin: 0 auto;/*中央寄せ*/
@@ -595,7 +591,54 @@ footer {
   padding-top: 20px;
 }
 
+.wellcome{
+  text-align: center;
+  color: white;
+}
+
+.about-image{
+  width: 1344px;
+  height: 899px;
+  opacity: 0.3;
+}
+.about-page{
+  width: 70%;
+  margin:0 auto;
+  padding-top: 50px;
+}
+.about-view{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background-color: #333333;;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border: solid 4px #FFCC66;/*線*/
+  border-radius: 10px;/*角の丸み*/
+
+}
+
+.explanatory-text{
+  padding-top: 20px;
+  padding-left: 70px;
+  color: white;
+  width: 70%;
+  margin:0 auto;
+}
+
 @media screen and (max-width:780px) {
+
+  .about-page{
+    width: 95%;
+    margin:0 auto;
+    padding-top: 5px;
+  }
+
+  .explanatory-text{
+  padding-top: 20px;
+  padding-left: 0;
+  color: white;
+  width: 100%;
+}
+
   .profile-container{
     width: 100%;
     margin:0 auto;
