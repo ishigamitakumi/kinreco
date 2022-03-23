@@ -47,7 +47,7 @@
           <td>
             <div>
               <%= link_to homes_about_path do %>
-                <i class="fas fa-question-circle link-icon2"></i><span class='sample2'>使い方</span>
+                <i class="fas fa-question-circle link-icon2"></i><span class='sample2'>About</span>
               <% end %>
             </div>
           </td>
@@ -73,11 +73,14 @@
       </table>
       <div class= "result">
         <h4 class= "weight-result">
-          今までの総重量は<span><%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %></span>kg
+          <span>
+          今までの総重量は
+            <%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %>
+            kg
+            </span>
           </h4>
         <h4 class= "post-result">
-           レベル
-           <span><%= @customer.muscle_posts.count.div(10)%></span>
+           <span>レベル<%= @customer.muscle_posts.count.div(10)%></span>
         </h4>
       </div>
   </div>
@@ -108,16 +111,16 @@
 <script>
   $(function(){
     $('.sample2').mouseover(function(e){
-      $(this).css('color','#333333');
-    });
-    $('.sample2').mouseout(function(e){
       $(this).css('color','#FFFFDD');
     });
+    $('.sample2').mouseout(function(e){
+      $(this).css('color','#333333');
+    });
     $('.link-icon2').mouseover(function(e){
-      $(this).parent().find('.sample2').css('color','#333333');
+      $(this).parent().find('.sample2').css('color','#FFFFDD');
     });
     $('.link-icon2').mouseout(function(e){
-      $(this).parent().find('.sample2').css('color','#FFFFDD');
+      $(this).parent().find('.sample2').css('color','#333333');
     });
   });
 </script>
