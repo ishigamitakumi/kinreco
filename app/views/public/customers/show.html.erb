@@ -43,6 +43,20 @@
             <% end %>
           </td>
         <tr>
+        <tr>
+          <td>
+            <div>
+              <%= link_to homes_about_path do %>
+                <i class="fas fa-question-circle link-icon2"></i><span class='sample2'>使い方</span>
+              <% end %>
+            </div>
+          </td>
+          <td>
+            <%= link_to new_muscle_post_path do  %>
+            <i class="fas fa-pen link-icon2"></i><span class='sample2'>投稿する</span>
+            <% end %>
+          </td>
+        </tr>
       <% else %>
         <tr>
           <% if current_customer.following?(@customer) %>
@@ -57,7 +71,6 @@
         </tr>
       <% end %>
       </table>
-
       <div class= "result">
         <h4 class= "weight-result">
           今までの総重量は<span><%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %></span>kg
@@ -65,9 +78,8 @@
         <h4 class= "post-result">
            レベル
            <span><%= @customer.muscle_posts.count.div(10)%></span>
-        </h>
+        </h4>
       </div>
-
   </div>
   <div class= "customer-post">
   <h4 class = "post-text">過去の投稿</h4>
