@@ -573,7 +573,12 @@ footer {
 .follow-item:last-child{
   padding-top: 15px;
 }
-
+.favorite-icon{
+  color: #FF0000;
+}
+.favorite-icon2{
+  color: #808080;
+}
 
 @media screen and (max-width:780px) {
   .profile-container{
