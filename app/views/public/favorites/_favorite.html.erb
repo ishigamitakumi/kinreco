@@ -1,10 +1,14 @@
 <% if muscle_post.favorited_by?(current_customer) %>
-  <%= link_to muscle_post_favorites_path(muscle_post), method: :delete do %>
+  <%= link_to muscle_post_favorites_path(muscle_post), method: :delete,remote: true do %>
+  <span class="favorite-icon">
   ♥<%= muscle_post.favorites.count %>
+  </span>
   <% end %>
-  
+
 <% else %>
-  <%= link_to muscle_post_favorites_path(muscle_post), method: :post do %>
+  <%= link_to muscle_post_favorites_path(muscle_post), method: :post, remote: true do %>
+  <span class="favorite-icon2">
   ♡<%= muscle_post.favorites.count %>
+  </span>
   <% end %>
 <% end %>
