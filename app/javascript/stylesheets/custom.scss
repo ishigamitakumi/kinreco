@@ -35,7 +35,7 @@ footer {
 }
 
 .profile{
-  width: 30%;
+  width: 35%;
   padding-right: 100px;
   padding: 0.5em 1em;
   margin: 2em 0;
@@ -124,11 +124,11 @@ footer {
 }
 
 .link-icon2{
-  color:#333333;
+  color:#FFFFDD;
 }
 
 .sample2{
-   color:#FFFFDD;
+   color:#333333;
 }
 .edit-page{
   width: 70%;/*横幅*/
@@ -219,6 +219,8 @@ footer {
 .profile-table{
   border-collapse: separate;
   border-spacing: 15px;
+  color: #FFFFDD;
+  padding-left: 20px;
 }
 
 
@@ -305,12 +307,13 @@ footer {
 }
 
 .weight-result span{
-  color: red;
+  color: #FFFFDD;
 }
 
 .post-result span{
-  color: red;
+  color: #FFFFDD;
 }
+
 
 .btn-square-little-rich {
   position: relative;
@@ -589,6 +592,7 @@ footer {
 }
 .result{
   padding-top: 20px;
+  padding-left: 20px;
 }
 
 .wellcome{
@@ -652,8 +656,9 @@ footer {
   }
 
   .profile-table{
-    width: 80%;
+    width: 90%;
     margin:0 auto;
+    padding-left: 0;
   }
 
   .customer-post{
@@ -957,6 +962,11 @@ footer {
   display:flex;
   justify-content: space-between;
 
+}
+
+.result{
+  padding-top: 20px;
+  padding-left: 0;
 }
 
 }

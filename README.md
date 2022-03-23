@@ -50,4 +50,3 @@ https://docs.google.com/spreadsheets/d/1FvDpw9eOXjLRTYZTC-CNLffGl8iWEO9CfLu8SawU
 
 ## 使用素材
 https://www.designevo.com/
-https://o-dan.net/ja/
