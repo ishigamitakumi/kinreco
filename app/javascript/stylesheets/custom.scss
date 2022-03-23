@@ -35,7 +35,14 @@ footer {
 }
 
 .profile{
-  width: 50%;
+  width: 35%;
+  padding-right: 100px;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background-color: #333333;;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border: solid 4px #FFCC66;/*線*/
+  border-radius: 10px;/*角の丸み*/
 }
 .customer-post{
   width: 50%;
@@ -117,23 +124,12 @@ footer {
 }
 
 .link-icon2{
-  color:#333333;
+  color:#FFFFDD;
 }
 
 .sample2{
-   color:#FFFFDD;
+   color:#333333;
 }
-
-.about-page{
-  width: 70%;
-  margin:0 auto;
-  padding: 50px ;
-}
-
-.wellcome{
-  text-align: center;
-}
-
 .edit-page{
   width: 70%;/*横幅*/
   margin: 0 auto;/*中央寄せ*/
@@ -223,6 +219,8 @@ footer {
 .profile-table{
   border-collapse: separate;
   border-spacing: 15px;
+  color: #FFFFDD;
+  padding-left: 20px;
 }
 
 
@@ -309,12 +307,13 @@ footer {
 }
 
 .weight-result span{
-  color: red;
+  color: #FFFFDD;
 }
 
 .post-result span{
-  color: red;
+  color: #FFFFDD;
 }
+
 
 .btn-square-little-rich {
   position: relative;
@@ -593,9 +592,57 @@ footer {
 }
 .result{
   padding-top: 20px;
+  padding-left: 20px;
+}
+
+.wellcome{
+  text-align: center;
+  color: white;
+}
+
+.about-image{
+  width: 1344px;
+  height: 899px;
+  opacity: 0.3;
+}
+.about-page{
+  width: 70%;
+  margin:0 auto;
+  padding-top: 50px;
+}
+.about-view{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background-color: #333333;;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
+  border: solid 4px #FFCC66;/*線*/
+  border-radius: 10px;/*角の丸み*/
+
+}
+
+.explanatory-text{
+  padding-top: 20px;
+  padding-left: 70px;
+  color: white;
+  width: 70%;
+  margin:0 auto;
 }
 
 @media screen and (max-width:780px) {
+
+  .about-page{
+    width: 95%;
+    margin:0 auto;
+    padding-top: 5px;
+  }
+
+  .explanatory-text{
+  padding-top: 20px;
+  padding-left: 0;
+  color: white;
+  width: 100%;
+}
+
   .profile-container{
     width: 100%;
     margin:0 auto;
@@ -609,8 +656,9 @@ footer {
   }
 
   .profile-table{
-    width: 80%;
+    width: 90%;
     margin:0 auto;
+    padding-left: 0;
   }
 
   .customer-post{
@@ -687,7 +735,7 @@ footer {
   }
   .index-link{
     padding: 0;
-    width: 30%;
+    width: 35%;
     margin:0 auto;
     display: flex;
     flex-direction:column
@@ -914,6 +962,11 @@ footer {
   display:flex;
   justify-content: space-between;
 
+}
+
+.result{
+  padding-top: 20px;
+  padding-left: 0;
 }
 
 }
