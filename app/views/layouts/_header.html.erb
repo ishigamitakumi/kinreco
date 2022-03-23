@@ -1,9 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark header">
-  <div class ="icon">
-   <%= link_to homes_about_path, class: "navbar-brand" do %>
-   <%= image_tag 'logo4.jpg', size: "150x75" %>
-   <% end %>
-  </div>
+  <%= render "layouts/logo" %>
   <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -20,7 +16,7 @@
             <li>
               <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
             </li>
-            <% else %>
+          <% else %>
             <% if customer_signed_in? %>
             <li>
               <%= link_to customer_path(current_customer) do %>
