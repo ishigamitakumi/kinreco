@@ -26,6 +26,12 @@ footer {
   min-height:100vh;
 }
 
+.main {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: #FFFFDD;
+}
+
 .profile-container{
   width: 70%;
   margin:0 auto;
@@ -629,13 +635,7 @@ footer {
 }
 
 @media screen and (max-width:780px) {
-
-  .main{
-  background-color: #FFFFDD;
-  min-height:100vh;
   
-}
-
   .about-page{
     width: 95%;
     margin:0 auto;
