@@ -28,7 +28,6 @@ footer {
 
 .main {
   min-height: 100vh; /* Fallback */
-  height: -webkit-fill-available;
   background-color: #FFFFDD;
 }
 
@@ -640,6 +639,10 @@ footer {
 }
 
 @media screen and (max-width:780px) {
+
+  .main {
+    height: 100%
+}
 
   .about-page{
     width: 95%;
