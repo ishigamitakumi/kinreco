@@ -7,7 +7,7 @@
         data: {
           // 横軸を指定
           labels: [
-            // whereで現在のユーザーのMusclePostを取ってくる、lastで最後から11日分を取ってくる、pluckでカラムを指定して取ってくる
+            // whereで現在のユーザーのMusclePostを取ってくる、lastで最後から11日を取ってくる、pluckでカラムを指定して取ってくる
             // mapでdateを変換した値を順に取ってくる、.html_safeで""をhttmlに変換させずに出力する
             "<%= MusclePost.where(customer_id: current_customer.id).last(11).pluck(:created_at).map{ |date| date.strftime("%m/%d")}.join('","').html_safe %>"
           ],
@@ -31,7 +31,6 @@
             yAxes: [
               {
                 ticks: {
-                  stepSize: 0.5,
                   // ここで最小値を指定することができる。指定しないとdataの最小値が最小値になる。
                   // min: 50.0,max: 120.0,
                   // ここで縦軸に単位を加えることができる。
