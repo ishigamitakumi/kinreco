@@ -1,7 +1,7 @@
 class Admin::MuscleMenusController < ApplicationController
   before_action :authenticate_admin!
   def index
-    @muscle_menus = MuscleMenu.all
+    @muscle_menus = MuscleMenu.page(params[:page]).per(15)
     @muscle_menu = MuscleMenu.new
   end
 
