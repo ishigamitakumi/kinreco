@@ -1,51 +1,51 @@
-<canvas id="myChart" width="300" height="80"></canvas>
+<canvas id="myChart" width="300" height="120"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    // 横軸を指定
-    labels: [
-      // whereで現在のユーザーのMusclePostを取ってくる、lastで最後から一ヶ月分を取ってくる、pluckでカラムを指定して取ってくる
-      // mapでdateを変換した値を順に取ってくる、.html_safeで""をhttmlに変換させずに出力する
-      "<%= MusclePost.where(customer_id: current_customer.id).last(31).pluck(:created_at).map{ |date| date.strftime("%m/%d")}.join('","').html_safe %>"
-    ],
-    datasets: [
-      {
-        // 上部のタイトル指定
-        label: 'ダイエット記録',
-        lineTension: 0.1,
-        // 色周りの指定
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
-        // 縦軸データを指定
-        data: [
-          <%= MusclePost.where(customer_id: current_customer.id).last(31).pluck(:body_weight).to_a.join(', ')  %>
-        ]
-      }
-    ]
-  },
-  options: {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            // ここで最小値を指定することができる。指定しないとdataの最小値が最小値になる。
-            // min: 50.0,max: 120.0,
-            // ここで縦軸に単位を加えることができる。
-            userCallback: function (tick) {
-              return tick.toString() + 'kg';
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          // 横軸を指定
+          labels: [
+            // whereで現在のユーザーのMusclePostを取ってくる、lastで最後から11日を取ってくる、pluckでカラムを指定して取ってくる
+            // mapでdateを変換した値を順に取ってくる、.html_safeで""をhttmlに変換させずに出力する
+            "<%= MusclePost.where(customer_id: current_customer.id).last(11).pluck(:created_at).map{ |date| date.strftime("%m/%d")}.join('","').html_safe %>"
+          ],
+          datasets: [
+            {
+              // 上部のタイトル指定
+              label: 'ダイエット記録',
+              lineTension: 0.1,
+              // 色周りの指定
+              backgroundColor: 'rgba(75,192,192,0.4)',
+              borderColor: 'rgba(75,192,192,1)',
+              // 縦軸データを指定
+              data: [
+                <%= MusclePost.where(customer_id: current_customer.id).last(11).pluck(:body_weight).to_a.join(', ')  %>
+              ]
             }
-          },
-          // 縦軸のラベル指定
-          scaleLabel: {
-            display: true,
-            labelString: '体重'
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  // ここで最小値を指定することができる。指定しないとdataの最小値が最小値になる。
+                  // min: 50.0,max: 120.0,
+                  // ここで縦軸に単位を加えることができる。
+                  userCallback: function (tick) {
+                    return tick.toString() + 'kg';
+                  }
+                },
+                // 縦軸のラベル指定
+                scaleLabel: {
+                  display: true,
+                  labelString: '体重'
+                }
+              }
+            ]
           }
         }
-      ]
-    }
-  }
-});
+      });
     </script>
