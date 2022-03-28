@@ -33,6 +33,7 @@ resources :muscle_posts, only: [:new,:create,:index,:show, :edit, :update,:destr
 resources :muscle_menus, only: [:index]
 resource :contacts, only: [:new, :create] do
  get "/thanks" => "contacts#thanks"
+ get "" => "contacts#back"
 end
 end
 
