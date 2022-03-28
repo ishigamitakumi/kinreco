@@ -31,6 +31,9 @@ resources :muscle_posts, only: [:new,:create,:index,:show, :edit, :update,:destr
   resource :favorites, only: [:create,:destroy]
   end
 resources :muscle_menus, only: [:index]
+resource :contacts, only: [:new, :create] do
+ get "/thanks" => "contacts#thanks"
+end
 end
 
 namespace :admin do
