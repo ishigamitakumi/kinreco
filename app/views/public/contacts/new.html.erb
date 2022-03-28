@@ -1,0 +1,10 @@
+<h3>お問い合わせ</h3>
+<%= form_with(model: @contact, local: true) do |f| %>
+  <%= f.label :name, "お名前" %>
+  <%= f.text_field :name %>
+  <%= f.label :email, "メールアドレス" %>
+  <%= f.email_field :email, autocomplete: "email" %>
+  <%= f.label :content, "内容" %>
+  <%= f.text_field :content %>
+  <%= f.submit "送信する" %>
+<% end %>

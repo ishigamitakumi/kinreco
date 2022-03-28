@@ -19,7 +19,12 @@
     </div>
     <footer>
       <div class="footer-text">
-          <p>© 2022 kinreco</p>
+          <p>
+          © 2022 kinreco&nbsp;&nbsp;
+          <%= link_to new_contacts_path do %>
+          <i class="fas fa-comment-dots footer-icon"></i>
+          <% end %>
+          </p>
       </div>
     </footer>
   </body>
