@@ -72,16 +72,16 @@
       <% end %>
       </table>
       <div class= "result">
-        <h4 class= "weight-result">
+        <h5 class= "weight-result">
           <span>
           今までの総重量は
             <%= @customer.muscle_posts.map{|muscle_post| muscle_post.times * muscle_post.weight.to_i}.sum %>
             kg
             </span>
-          </h4>
-        <h4 class= "post-result">
+          </h5>
+        <h5 class= "post-result">
            <span>レベル<%= @customer.muscle_posts.count.div(10)%></span>
-        </h4>
+        </h5>
       </div>
   </div>
   <div class= "customer-post">

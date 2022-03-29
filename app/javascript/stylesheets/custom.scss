@@ -40,9 +40,9 @@ footer {
 // }
 
 .profile-container{
-  width: 70%;
+  width: 80%;
   margin:0 auto;
-  padding: 50px ;
+  padding-top: 50px;
   display:flex;
   justify-content: space-between;
 }
@@ -180,7 +180,7 @@ footer {
 }
 
 .post-detail-page{
-  width: 80%;
+  width: 95%;
   margin:0 auto;
   padding-top: 50px;
 }
@@ -233,7 +233,7 @@ footer {
   border-collapse: separate;
   border-spacing: 15px;
   color: #FFFFDD;
-  padding-left: 20px;
+  margin:0 auto;
 }
 
 
@@ -377,7 +377,7 @@ footer {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
   border: solid 1px #6091d3;/*線*/
   border-radius: 10px;/*角の丸み*/
-  width: 60%;
+  width: 75%;
   margin:0 auto;
   margin-bottom: 20px;
   padding-top: 20px;
@@ -580,7 +580,7 @@ footer {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.22);
   border: solid 1px #6091d3;/*線*/
   border-radius: 10px;/*角の丸み*/
-  width: 60%;
+  width: 70%;
   margin:0 auto;
   margin-bottom: 20px;
   display:flex;
@@ -604,8 +604,8 @@ footer {
   color: #808080;
 }
 .result{
-  padding-top: 20px;
-  padding-left: 20px;
+  width: 70%;
+  margin:0 auto;
 }
 
 .wellcome{
@@ -690,15 +690,6 @@ footer {
     margin-top: 30px;
   }
 
-  .weight-result{
-    width: 80%;
-    margin:0 auto;
-  }
-
-  .post-result{
-    width: 80%;
-    margin:0 auto;
-  }
 
   .calendar-page{
     width: 100%;
