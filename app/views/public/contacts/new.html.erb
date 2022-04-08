@@ -1,12 +1,12 @@
 <div class=inquiry-page>
   <h3>お問い合わせ</h3>
   <%= form_with(model: @contact, local: true) do |f| %>
-  <%= f.label :name, "お名前" %></br>
+  <%= f.label :name, "お名前" %><br>
   <%= f.text_field :name %> </br>
-  <%= f.label :email, "メールアドレス" %></br>
-  <%= f.email_field :email, autocomplete: "email" %></br>
-  <%= f.label :content, "内容" %></br>
-  <%= f.text_area :content %></br>
+  <%= f.label :email, "メールアドレス" %><br>
+  <%= f.email_field :email, autocomplete: "email" %><br>
+  <%= f.label :content, "内容" %><br>
+  <%= f.text_area :content %><br>
   <p></p>
   <%= f.submit "送信する" %>
   <% end %>
