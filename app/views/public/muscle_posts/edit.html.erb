@@ -9,7 +9,7 @@
   <%= form_with model: @muscle_post,url: muscle_post_path, method: :patch do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
   <div class= "new-post-child">
-  <%= f.label :sentence, "文章(100文字以内)" %></br>
+  <%= f.label :sentence, "文章(100文字以内)" %><br>
   <%= f.text_area :sentence,maxlength: "100" %>
   </div>
 
